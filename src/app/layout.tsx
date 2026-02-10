@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { AuthProvider } from "@/contexts/AuthContext";
+import FacebookSDK from "@/components/FacebookSDK";
 import "./globals.css";
 
 const SITE_URL = "https://nepalelection2026.com";
@@ -242,6 +244,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
 
+        {/* Facebook Login SDK — loaded via client component for onLoad handler */}
+
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -253,7 +257,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
-        {children}
+        <FacebookSDK />
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

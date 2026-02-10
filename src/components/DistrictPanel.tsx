@@ -3,8 +3,11 @@
 import { useState } from "react";
 import { DistrictData, PROVINCE_NAMES, PROVINCE_COLORS, PARTY_COLORS, Candidate } from "@/data/electionData";
 import { getDistrictResults, type ConstituencyResult } from "@/data/partyStrength";
+import { useLikes } from "@/hooks/useLikes";
+import { useAuth } from "@/contexts/AuthContext";
 import BookmarkButton from "./BookmarkButton";
 import ShareCard from "./ShareCard";
+import LikeButton from "./LikeButton";
 
 interface DistrictPanelProps {
   district: DistrictData;
@@ -17,7 +20,17 @@ function titleCase(str: string): string {
   return str.toLowerCase().split(" ").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 }
 
-function CandidateCard({ candidate, rank }: { candidate: Candidate; rank: number }) {
+interface CandidateCardProps {
+  candidate: Candidate;
+  rank: number;
+  district: string;
+  zone: number;
+  likeCount: number;
+  isLiked: boolean;
+  onLike: () => void;
+}
+
+function CandidateCard({ candidate, rank, district, zone, likeCount, isLiked, onLike }: CandidateCardProps) {
   return (
     <div className="flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors">
       <div
@@ -38,6 +51,16 @@ function CandidateCard({ candidate, rank }: { candidate: Candidate; rank: number
           <span className="text-slate-400 text-xs truncate">{candidate.party}</span>
         </div>
       </div>
+      <LikeButton
+        district={district}
+        zone={zone}
+        candidateName={candidate.name}
+        party={candidate.party}
+        partyShort={candidate.partyShort}
+        likeCount={likeCount}
+        isLiked={isLiked}
+        onLike={onLike}
+      />
     </div>
   );
 }
@@ -77,6 +100,8 @@ export default function DistrictPanel({ district, onClose, isBookmarked, onToggl
   const provinceColor = PROVINCE_COLORS[district.province];
   const totalCandidates = district.zones.reduce((a, z) => a + z.candidates.length, 0);
   const results2022 = getDistrictResults(district.district);
+  const { user } = useAuth();
+  const { getLikeCount, isLikedByUser, toggleLike } = useLikes(district.district);
 
   // Count unique parties in 2022 results
   const partiesWon2022 = new Set(results2022.map((r) => r.party));
@@ -171,6 +196,16 @@ export default function DistrictPanel({ district, onClose, isBookmarked, onToggl
       <div className="flex-1 overflow-y-auto p-4">
         {activeTab === "candidates" ? (
           <div className="space-y-4">
+            {/* Disclaimer */}
+            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-4 py-3">
+              <p className="text-xs text-amber-300/90 leading-relaxed">
+                <strong>Disclaimer:</strong> Likes reflect user sentiment only — not actual election results.
+                {!user && (
+                  <span className="text-amber-400/70"> Login with Facebook to vote for your favorite candidate.</span>
+                )}
+              </p>
+            </div>
+
             {district.zones.length === 0 ? (
               <div className="text-center py-8">
                 <p className="text-slate-400 text-sm">No candidate data available yet</p>
@@ -186,7 +221,18 @@ export default function DistrictPanel({ district, onClose, isBookmarked, onToggl
                   </div>
                   <div className="p-2 space-y-1.5">
                     {zone.candidates.map((candidate, idx) => (
-                      <CandidateCard key={idx} candidate={candidate} rank={idx + 1} />
+                      <CandidateCard
+                        key={idx}
+                        candidate={candidate}
+                        rank={idx + 1}
+                        district={district.district}
+                        zone={zone.zone}
+                        likeCount={getLikeCount(zone.zone, candidate.name)}
+                        isLiked={isLikedByUser(zone.zone, candidate.name)}
+                        onLike={() =>
+                          toggleLike(zone.zone, candidate.name, candidate.party, candidate.partyShort)
+                        }
+                      />
                     ))}
                   </div>
                 </div>

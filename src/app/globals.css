@@ -110,6 +110,20 @@ body {
   }
 }
 
+/* Mobile bottom sheet animation */
+@keyframes sheetUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobile-sheet-up {
+  animation: sheetUp 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
 /* Tabular numbers for countdown */
 .tabular-nums {
   font-variant-numeric: tabular-nums;

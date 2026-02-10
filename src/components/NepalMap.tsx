@@ -6,14 +6,16 @@ import "leaflet/dist/leaflet.css";
 import { PROVINCE_COLORS, getDistrictData } from "@/data/electionData";
 import { getRealDominantPartyColor, getRealDominantPartyName } from "@/data/partyStrength";
 import type { MapColorMode } from "./MapModeToggle";
+import type { DistrictSentiment } from "@/hooks/useSentiment";
 
 interface NepalMapProps {
   onDistrictSelect: (districtName: string | null) => void;
   selectedDistrict: string | null;
   colorMode: MapColorMode;
+  sentimentData?: Record<string, DistrictSentiment>;
 }
 
-export default function NepalMap({ onDistrictSelect, selectedDistrict, colorMode }: NepalMapProps) {
+export default function NepalMap({ onDistrictSelect, selectedDistrict, colorMode, sentimentData }: NepalMapProps) {
   const mapRef = useRef<L.Map | null>(null);
   const geoLayerRef = useRef<L.GeoJSON | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,7 +39,9 @@ export default function NepalMap({ onDistrictSelect, selectedDistrict, colorMode
       if (colorMode === "party") {
         baseColor = getRealDominantPartyColor(districtName);
       } else if (colorMode === "election2026") {
-        baseColor = "#475569"; // slate-600 grey — no results yet
+        // Use sentiment data if available, otherwise grey
+        const sentiment = sentimentData?.[districtName.toUpperCase()];
+        baseColor = sentiment?.color || "#475569";
       } else {
         baseColor = PROVINCE_COLORS[province] || "#6b7280";
       }
@@ -51,7 +55,7 @@ export default function NepalMap({ onDistrictSelect, selectedDistrict, colorMode
         dashArray: "",
       };
     },
-    [colorMode]
+    [colorMode, sentimentData]
   );
 
   // Initialize map
@@ -110,7 +114,12 @@ export default function NepalMap({ onDistrictSelect, selectedDistrict, colorMode
             <div class="tooltip-detail">Province: ${province}</div>
             <div class="tooltip-detail">Election Zones: ${zones}</div>
             ${colorMode === "party" ? `<div class="tooltip-detail" style="color:#e2e8f0;margin-top:2px">🏛️ 2022 Winner: ${dominantParty}</div>` : ""}
-            ${colorMode === "election2026" ? `<div class="tooltip-detail" style="color:#94a3b8;margin-top:2px">📊 Results pending — March 5, 2026</div>` : ""}
+            ${colorMode === "election2026" ? (() => {
+              const s = sentimentData?.[name.toUpperCase()];
+              return s
+                ? `<div class="tooltip-detail" style="color:#e2e8f0;margin-top:2px">🔥 Top Sentiment: ${s.partyShort} (${s.totalLikes} likes)</div>`
+                : `<div class="tooltip-detail" style="color:#94a3b8;margin-top:2px">📊 No sentiment data yet</div>`;
+            })() : ""}
           </div>
         `;
 
@@ -142,7 +151,7 @@ export default function NepalMap({ onDistrictSelect, selectedDistrict, colorMode
 
     layer.addTo(mapRef.current);
     geoLayerRef.current = layer;
-  }, [geoData, getDistrictStyle, onDistrictSelect, selectedDistrict, colorMode]);
+  }, [geoData, getDistrictStyle, onDistrictSelect, selectedDistrict, colorMode, sentimentData]);
 
   // Update styles when selection or color mode changes
   useEffect(() => {
