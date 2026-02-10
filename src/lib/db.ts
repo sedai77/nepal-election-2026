@@ -1,7 +1,7 @@
 import { createPool } from "@vercel/postgres";
 
 const pool = createPool({
-  connectionString: process.env.STORAGE_URL || process.env.POSTGRES_URL,
+  connectionString: process.env.STORAGE_DATABASE_URL || process.env.STORAGE_URL || process.env.POSTGRES_URL,
 });
 
 export const sql = pool.sql;
