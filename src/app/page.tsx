@@ -265,17 +265,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* Footer — legal links */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-center gap-3 py-1.5 bg-gradient-to-t from-slate-950/90 to-transparent pointer-events-none">
-          <div className="pointer-events-auto flex items-center gap-2 md:gap-3 text-[10px] md:text-xs text-slate-500">
-            <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
-            <span className="text-slate-700">|</span>
-            <Link href="/tos" className="hover:text-slate-300 transition-colors">Terms</Link>
-            <span className="text-slate-700">|</span>
-            <Link href="/data" className="hover:text-slate-300 transition-colors">Data Disclaimer</Link>
-          </div>
-        </div>
-
         {/* Desktop: Province District List */}
         {selectedProvince && !selectedDistrict && (
           <div className="hidden md:block absolute bottom-20 left-4 z-20 bg-slate-900/95 backdrop-blur-md rounded-xl border border-slate-700/50 p-3 max-h-64 overflow-y-auto w-72 shadow-2xl">
@@ -298,6 +287,19 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {/* Footer — always visible */}
+        <footer className="shrink-0 bg-slate-900 border-t border-slate-800 px-4 py-2 z-20">
+          <div className="flex items-center justify-center gap-2 md:gap-3 text-[10px] md:text-xs text-slate-500">
+            <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
+            <span className="text-slate-700">|</span>
+            <Link href="/tos" className="hover:text-slate-300 transition-colors">Terms</Link>
+            <span className="text-slate-700">|</span>
+            <Link href="/data" className="hover:text-slate-300 transition-colors">Data Disclaimer</Link>
+            <span className="text-slate-700">|</span>
+            <span className="text-slate-600">© 2026 Nepal Election Tracker</span>
+          </div>
+        </footer>
       </div>
 
       {/* ========== MOBILE MODALS — rendered OUTSIDE the overflow-hidden root ========== */}
