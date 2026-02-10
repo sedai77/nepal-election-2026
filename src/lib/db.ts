@@ -1,6 +1,11 @@
-import { sql } from "@vercel/postgres";
+import { createPool } from "@vercel/postgres";
 
-export { sql };
+const pool = createPool({
+  connectionString: process.env.STORAGE_URL || process.env.POSTGRES_URL,
+});
+
+export const sql = pool.sql;
+export { pool };
 
 /**
  * Initialize database tables. Call once after first deploy.
