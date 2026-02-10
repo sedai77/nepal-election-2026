@@ -28,7 +28,7 @@ interface FacebookSDK {
     version: string;
   }): void;
   login(
-    callback: (response: FacebookLoginResponse) => void,
+    callback: (response: FacebookLoginResponse) => void | Promise<void>,
     options?: { scope?: string; return_scopes?: boolean }
   ): void;
   logout(callback?: (response: any) => void): void;
