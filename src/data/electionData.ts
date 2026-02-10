@@ -41,22 +41,36 @@ export const PROVINCE_COLORS: Record<number, string> = {
 };
 
 export const PARTY_COLORS: Record<string, string> = {
-  "Nepali Congress": "#e11d48",
-  "CPN-UML": "#2563eb",
+  // Nepali Congress — green tree on flag, party identity is GREEN
+  "Nepali Congress": "#16a34a",
+  // CPN-UML — red sun symbol, party identity is RED
+  "CPN-UML": "#dc2626",
   "Nepali Communist Party": "#991b1b",
-  "Rastriya Swotantra Party": "#f59e0b",
-  "Rastriya Swatantra Party": "#f59e0b",
-  "CPN (Maoist Centre)": "#dc2626",
-  "CPN-Maoist Centre": "#dc2626",
-  "Rastriya Prajatantra Party": "#6366f1",
-  "Janata Samajwadi Party": "#10b981",
-  "Janata Samajbadi Party": "#10b981",
-  "CPN-Unified Socialist": "#8b5cf6",
-  "CPN (Unified Socialist)": "#8b5cf6",
-  "Janamat Party": "#14b8a6",
-  "Loktantrik Samajwadi Party": "#f97316",
-  "Loktantrik Samajbadi Party": "#f97316",
-  "Nagarik Unmukti Party": "#84cc16",
+  // Rastriya Swatantra Party — sky blue flag
+  "Rastriya Swotantra Party": "#0ea5e9",
+  "Rastriya Swatantra Party": "#0ea5e9",
+  // CPN (Maoist Centre) — dark crimson / maroon
+  "CPN (Maoist Centre)": "#b91c1c",
+  "CPN-Maoist Centre": "#b91c1c",
+  // Rastriya Prajatantra Party — golden/crown yellow
+  "Rastriya Prajatantra Party": "#ca8a04",
+  // Janata Samajwadi Party — green
+  "Janata Samajwadi Party": "#059669",
+  "Janata Samajbadi Party": "#059669",
+  // CPN (Unified Socialist) — red-violet
+  "CPN-Unified Socialist": "#9333ea",
+  "CPN (Unified Socialist)": "#9333ea",
+  // Janamat Party — teal
+  "Janamat Party": "#0d9488",
+  // Loktantrik Samajwadi Party — orange
+  "Loktantrik Samajwadi Party": "#ea580c",
+  "Loktantrik Samajbadi Party": "#ea580c",
+  // Nagarik Unmukti Party — lime green
+  "Nagarik Unmukti Party": "#65a30d",
+  // Nepal Workers and Peasants Party — deep red
+  "Nepal Workers and Peasants Party": "#7f1d1d",
+  // Rastriya Janamorcha — brown/maroon
+  "Rastriya Janamorcha": "#92400e",
   Independent: "#6b7280",
 };
 

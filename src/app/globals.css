@@ -109,3 +109,28 @@ body {
     animation: slideInMobile 0.3s ease-out;
   }
 }
+
+/* Tabular numbers for countdown */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Bar chart animation */
+@keyframes barGrow {
+  from {
+    width: 0%;
+  }
+}
+
+/* Subtle gradient bg for stats page */
+.stats-bg {
+  background: radial-gradient(ellipse at top, #1e293b 0%, #0f172a 60%);
+}
+
+/* Focus visible ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
