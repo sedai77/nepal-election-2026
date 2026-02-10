@@ -1,0 +1,5314 @@
+[
+  {
+    "district": "ACHHAM",
+    "province": 7,
+    "hq": "MANGALSEN",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Dipak Saud",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bhimbahadur Rawal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bharatkumar Swar",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Omprakash Rawal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Yagyabahadur Bogati",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Balbahadur Kunwar",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Puspabahadur Shah",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bhupadev Shah",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "ARGHAKHANCHI",
+    "province": 5,
+    "hq": "SANDHIKHARKA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Pitambar Bhusal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rambahadur Chauhan",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bishnuprasad Khanal",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Hariprasad Bhusal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BAGLUNG",
+    "province": 4,
+    "hq": "BAGLUNG",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Hirabahadur Kc",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bhimbahadur Srisha Rana",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sunil Khadka",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Manju Sharma Chalise",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Gyannath Gaire",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Tekraj Poudel",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Som Sharma",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BAITADI",
+    "province": 7,
+    "hq": "DASHARATHCHAND",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Damodar Bhandari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Parmananda Bhatta",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Chaturbahadur Chand",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Harimohan Bhandari",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BAJHANG",
+    "province": 7,
+    "hq": "JAYAPRITHVI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Ain Mahar",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Minbahadur Kunwar",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Prakash Rasaili 'Snehi'",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Shaileshkumar Singh",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BAJURA",
+    "province": 7,
+    "hq": "MARTADI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Lalbahadur Thapa",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Prakashbahadur Shah",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Janakraj Giri",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Hemraj Thapa",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BANKE",
+    "province": 5,
+    "hq": "NEPALGANJ",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Suryaprasad Dhakal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Narendra Pandey",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Narayanprasad Gaudel",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Suresh Chaudhari",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Mohamad Istiyak Rai",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dipendra Bista",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sudhanshu Koirala",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bibek Shrestha",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Suman Malla",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dipak Jiyam",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Amarsingh Pun",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Khagendra Sunar",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BARA",
+    "province": 2,
+    "hq": "KALAIYA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Achyutprasad Mainali",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Santosh Dangal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Shubha Budhathoki",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ganesh Dhimal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Balbirprasad Chaudhari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rameshprasad Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bhaiyaram Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Chandan Singh",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Jwalakumari Sah",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bharatprasad Sah",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Farmullah Mansur",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Arbind Sah",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Krishnakumar Shrestha",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ajay Kushawaha",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Shyambabu Gupta",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rahabar Ansari",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BARDIYA",
+    "province": 5,
+    "hq": "GULARIYA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Shalikram Adhikari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bishnulal Tharu",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sanjaya Gautam",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Thakursingh Tharu",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Bimala Bika",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Saresh Panta",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Kishorsingh Rathore",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Shridhar Pokhrel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BHAKTAPUR",
+    "province": 3,
+    "hq": "BHAKTAPUR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Somprasad Mishra",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hariram Lawaju",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Kiran Neupane",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rukesh Ranjit",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Mahesh Basnet",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramprasad Sapkota(Dipshikha)",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Kabir Rana",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rajib Khatri",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "BHOJPUR",
+    "province": 1,
+    "hq": "BHOJPUR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Sherdhan Rai",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ajambar Rai Kangmang",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Balkrishna Thapa",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rameshprasad Ojha",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "CHITWAN",
+    "province": 3,
+    "hq": "BHARATPUR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Dawa Dorje",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Krishna Panta",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Rajendra Burlakoti",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Hari Dhakal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Asmin Ghimire",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Pratap Gurung",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Minakumari Kharel",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rabi Lamichhane",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Shankarraj Thapaliya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Renu Dahal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Tekprasad Gurung",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sobita Gautam",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DADELDHURA",
+    "province": 7,
+    "hq": "AMARGADHI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Chakraprasad Snehi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Mansingh Mal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Nainasingh Mahar",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Tara Joshi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DAILEKH",
+    "province": 6,
+    "hq": "NARAYAN",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Rabindraraj Sharma",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ambarbahadur Thapa",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Vaasana Thapa",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Nk Basnet",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Laxmiprasad Pokhrel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Yogendra Shahi",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Dikplakumar Shahi",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bakhatbahadur Shahi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DANG",
+    "province": 5,
+    "hq": "TRIBHUWANNAGAR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Rewatiraman Subedi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Metmani Chaudhari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Yogendra Chaudhari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Devraj Pathak",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Shankar Pokhrel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Nirmal Acharya",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Kirankishor Ghimire",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bipin Acharya",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Ghanashyam Pandey",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dhanabahadur Maaski",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Dipak Giri",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Kamal Subedi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DARCHULA",
+    "province": 7,
+    "hq": "DARCHULA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Ganeshsingh Thagunna",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Laxmandatta Joshi",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Dharmananda Joshi",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rajeshsingh Samanta",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DHADING",
+    "province": 3,
+    "hq": "NILKANTHA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Bhumi Tripathi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rajendra Prasad Pandey",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Krishna Rijal",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ashika Tamang",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Dhanabahadur Ghale",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rambahadur Bhandari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Rameshprasad Dhamala",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bodhnarayan Shrestha",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DHANKUTA",
+    "province": 1,
+    "hq": "DHANKUTA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Rajendra Rai",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dharmaprasad Poudel",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Dinesh Rai",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dinesh Bhandari",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DHANUSA",
+    "province": 2,
+    "hq": "JANAKPUR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Ramchandra Mandal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Matrikaprasad Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Rampaltan Sah",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Kishori Sah",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Umashankar Argariya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramchandra Jha",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Dinesh Parsela",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rambinod Sah",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Julikumari Mahato",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramlalit Mandal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bimalendra Nidhi",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Manisha Jha",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Raghubir Mahaseth",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sanjayakumar Mahato",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Mahendra Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rajkishor Mahato",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DOLAKHA",
+    "province": 3,
+    "hq": "BHIMESHWAR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Paarbat Gurung",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bishal Khadka",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ajayababu Shiwakoti",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Jagadish Kharel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DOLPA",
+    "province": 6,
+    "hq": "DUNAI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Lankabahadur Rokaya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dhanbahadur Budha",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Karnabahadur Budha",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Devsingh Aidi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "DOTI",
+    "province": 7,
+    "hq": "DIPAYAL SILGADHI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Dipak Dhami",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Trilochan Bhatta",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bharatbahadur Khadka",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Narendrabahadur Khadka",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "EASTERN RUKUM",
+    "province": 5,
+    "hq": "RUKUMKOT",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Lilamani Gautam",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Puspakamal Dahal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Kusumdevi Thapa Magar",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Lakhan Thapa",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "GORKHA",
+    "province": 4,
+    "hq": "GORKHA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Ramchandra Lamichhane",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hariraj Adhikari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Premkumar Khatri",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sudhan Gurung",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Milan Gurung",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Lekhnath Neupane",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Prakashchandra Dawadi",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Kabindra Burlakoti",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "GULMI",
+    "province": 5,
+    "hq": "RESUNGA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Pradipkumar Gyawali",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sudarshan Baral",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Chandrakanta Bhandari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sagar Dhakal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Gokarnaraj Bista",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sriram Mahat",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bhawaniprasad Shrestha",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Gobinda Panthi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "HUMLA",
+    "province": 6,
+    "hq": "SIMIKOT",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Dal Fadera",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dipendra Rokaya",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Jayapati Rokaya",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Tasi Lhajom",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "ILAM",
+    "province": 1,
+    "hq": "ILAM",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Kajiman Kagate",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ranabahadur Rai",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Niskal Rai",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bimal Gadal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Suhang Nemwang",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ombahadur Gurung",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bhesraj Acharya",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Gokulbahadur Rai",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "JAJARKOT",
+    "province": 6,
+    "hq": "KHALANGA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Dambarbahadur Singh",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Shaktibahadur Basnet",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Khadkabahadur Budha",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Raghav Karki",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "JHAPA",
+    "province": 1,
+    "hq": "BHADRAPUR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Ramchandra Upreti",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ashes Ghimire",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Keshavraj Pandey",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Nisha Dangi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Devraj Ghimire",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dharmashila Chapagain",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sarita Rai",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Indira Rana",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Harilal Rajbanshi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dilli Ghimire",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Rajendra Ghimire",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Prakash Pathak",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Lalprasad Saawa Limbu",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Purushottam Chudal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Deuman Thebe",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Shambu Suskera Dhakal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 5,
+        "candidates": [
+          {
+            "name": "Kp Sharma Oli",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ranjit Tamang",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Mandhara Chamariya",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Balendra Shah",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "JUMLA",
+    "province": 6,
+    "hq": "CHANDANNATH",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Shantilal Mahat",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Naresh Bhandari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Dipbahadur Shahi",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Binita Kathayat",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "KAILALI",
+    "province": 7,
+    "hq": "DHANGADHI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Dwarikaprasad Neupane",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramlal Dagaura Tharu",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Janakraj Chaudhari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Komal Gyawali",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Suryabahadur Thapa",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Nandabahadur Saud",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bijayabahadur Swar",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Kp Khanal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Gaurishankar Chaudhari(Tharu)",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Birman Chaudhari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bhim Baduwal",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Jagatprasad Joshi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Lekhraj Bhatta",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hariram Chaudhari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gokarnabahadur Bista 'Aananda'",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Khemraj Koirala",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 5,
+        "candidates": [
+          {
+            "name": "Yagyaraj Dhungana",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Prem Ale",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Narayan Shah 'Manu'",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Aananda Chand",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "KALIKOT",
+    "province": 6,
+    "hq": "MANMA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Naagendra Shahi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Mahendrabahadur Shahi",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Harshabahadur Bam",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Prakash Neupane",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "KANCHANPUR",
+    "province": 7,
+    "hq": "BHIMDATTA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Tara Lama Tamang",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bina Magar",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gopi Upadhyaya",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Janaksingh Dhami",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Bacchanbahadur Singh",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Madhav Panta",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Narayanprakash Saud",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dipak Bohora",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Dr.Dipakprakash Bhatta",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Manbahadur Sunar",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Hari Bohora",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Gyanendra Mahata",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "KAPILVASTU",
+    "province": 5,
+    "hq": "KAPILVASTU",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Bishram Chaudhari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Krishna Kunwar",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Akabar Kamal Musalman",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Mohan Acharya",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Dirghanarayan Pandey",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Brijeshkumar Gupta",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Surendraraj Acharya",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bikram Thapa",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Birendra Kanaudiya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Yahasan Ahamad Khaa",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Abhisekpratap Shah",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Prakash Rajauriya",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "KASKI",
+    "province": 4,
+    "hq": "POKHARA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Bainabahadur Adhikari Chhetri",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramkaji Gurung",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Tilakbahadur Ranabhat",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Khadakraj Poudel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Rashmi Acharya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hembahadur Thapa",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Madhabprasad Baastola",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Uttam Poudel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Damodar Poudel Bairagi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Gopal Giri",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Manoj Gurung",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bina Gurung",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "KATHMANDU",
+    "province": 3,
+    "hq": "KATHMANDU",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Mohan Regmi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Menaka Bhandari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Prawal Thapa",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ranju Darshana",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Maniram Phuyal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Nitesh Poudel",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Kabir Sharma",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sunil Kc",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Rameshwor Phuyal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Niraj Lama",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramesh Aryal",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rajunath Pandey",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Rajan Bhattarai",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Indra Bhusal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sachin Timilsina",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Pukar Bam",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 5,
+        "candidates": [
+          {
+            "name": "Ishwor Pokhrel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Kalpana Sharma",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Pradip Poudel",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sasmit Pokhrel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 6,
+        "candidates": [
+          {
+            "name": "Amankumar Maskey",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hemlal Sharma(Himal)",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Krishna Baniya(Sabuj)",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Shishir Khanal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 7,
+        "candidates": [
+          {
+            "name": "Prakash Shrestha",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Basantaprasad Manandhar",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Pramodhari Guragain",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ganesh Parajuli",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 8,
+        "candidates": [
+          {
+            "name": "Rajesh Shakya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Suman Sayami",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sapana Rajbhandari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Birajbhakta Shrestha",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 9,
+        "candidates": [
+          {
+            "name": "Ajaykranti Shakya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Radhakrishna Maharjan",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Nanu Bastola",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dolprasad Aryal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 10,
+        "candidates": [
+          {
+            "name": "Binod Shrestha",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rupa Maharjan",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Himal Karki",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Pradip Bista",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "KAVREPALANCHOWK",
+    "province": 3,
+    "hq": "DHULIKHEL",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Amit Lama",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dinanath Gautam",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gunaraj Moktan",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Madhu Chaulagain",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Ashokkumar Byanju Shrestha",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Basundhara Humagain",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Madhuprasad Acharya",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Badan Bhandari",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "KHOTANG",
+    "province": 1,
+    "hq": "DIKTEL",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Devbikram Rai",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hari Roka",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Birkaji Rai",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rudra Giri",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "LALITPUR",
+    "province": 3,
+    "hq": "LALITPUR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Chetnath Sanjel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sunil Maharjan",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Udayashamsher Jabara",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Buddharatna Maharjan",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Prembahadur Maharjan",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rajendra Amatya",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Premkrishna Maharjan",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Jagadish Kharel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Sandan Thapa",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramkaji Maharjan",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Jitendrakumar Shrestha",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Tosima Karki",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "LAMJUNG",
+    "province": 4,
+    "hq": "BESISAHAR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Prithivisubba Gurung",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Harijung Tamang",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gamprasad Gurung",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dharmaraj Kc",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "MAHOTTARI",
+    "province": 2,
+    "hq": "JALESHWAR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Laxmi Mahato Koiri",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Girirajmani Pokhrel",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Mukeshraj Kafle",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Pramod Mahato",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Ramparikshyan Yadav",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Lakshman Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Kiran Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dipak Sah",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Manojkumar Singh",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rajkishor Sah Sudi",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bajaranga Nepali",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ujjwol Jha",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Sarojkumar Yadav",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bharatprasad Sah",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Mahendrakumar Raya",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Gaurikumari Yadav",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "MAKWANPUR",
+    "province": 3,
+    "hq": "HETAUDA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Rameshwor Rana",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bijay Gautam",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Mahalaxmi Upadhyaya 'Dina'",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Prakash Gautam",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Maheshkumar Bartaula",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Lavsher Bista",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Buddha Lama",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Prashant Upreti",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "MANANG",
+    "province": 4,
+    "hq": "CHAME",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Polden Chhopang Gurung",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Yashoda Subedi Gurung",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Tekbahadur Gurung",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "MORANG",
+    "province": 1,
+    "hq": "BIRATNAGAR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Ghanashyam Khatiwoda",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Kulprasad Samba",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Khadgabahadur Fago",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Yagyamani Neupane",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Dilpikumar Agrawal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Chandrabir Rai",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Minendraprasad Rijal",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Krishnakumar Karki",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Irankumar Rai",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Devman Sambahangfe",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sunilkumar Sharma",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ganesh Karki",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Jiban Ghimire",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Amanlal Modi",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gururaj Ghimire",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Santosh Rajbanshi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 5,
+        "candidates": [
+          {
+            "name": "Manoj Agrawal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Shivakumar Mandal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Fulkumar Lalwani",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Aasha Jha",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 6,
+        "candidates": [
+          {
+            "name": "Binod Dhakal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Opendrakumar Raya",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Shekhar Koirala",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rubina Acharya",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "MUGU",
+    "province": 6,
+    "hq": "GAMGHADI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Purnabahadur Rokaya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Chandrabahadur Shahi",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Khadga Shahi",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rajendrabahadur Shahi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "MUSTANG",
+    "province": 4,
+    "hq": "JOMSOM",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Indradhara Bista",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Mutuk Gurung",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Yogesh Gauchan",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Aaditya Thakali",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "MYAGDI",
+    "province": 4,
+    "hq": "BENI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Harikrishna Shrestha",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Arjun Thapa",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Karnabahadur Bhandari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Yubaraj Roka",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "NAWALPUR",
+    "province": 4,
+    "hq": "KAWASOTI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Bhagirath Sapkota",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Lokprasad Bhurtel",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Balkrishna Ghimire",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rajan Gautam",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Tilbahadur Mahat Chhetri",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ganeshman Mahato",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ombahadur Ghartimagar",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Manish Khanal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "NUWAKOT",
+    "province": 3,
+    "hq": "BIDUR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Badri Mainali",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hitbahadur Tamang",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Prakashsharan Mahat",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bikram Timalsina",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Keshavraj Pandey",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hiranath Khatiwoda",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Jagadishnarsingh Kc",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Achyutam Lamichhane",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "OKHALDHUNGA",
+    "province": 1,
+    "hq": "SIDDHICHARAN",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Asmita Thapa",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ambirbabu Gurung",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Kumar Luitel",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bishworaj Pokhrel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "PALPA",
+    "province": 5,
+    "hq": "TANSEN",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Nayaran Acharya",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Hombahadur Sunari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sandip Rana",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bimal Panta",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Thakur Gaire",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Somprasad Pandey",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Himaldatta Shrestha",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Madhav Thapa",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "PANCHTHAR",
+    "province": 1,
+    "hq": "PHIDIM",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Aaindrasundar Nemwang",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Harkabahadur Nemwang",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Narendra Kumar Kerung",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Mahendrabikram Thamsuhang",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "PARASI",
+    "province": 5,
+    "hq": "PARASI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Ramprasad Pandey",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sindhu Jalesha",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Binod Chaudhari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bikram Khanal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Lekhnath Kharel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Devendra Poudel",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Devendraraj Kandel",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Narendrakumar Gupta",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "PARBAT",
+    "province": 4,
+    "hq": "KUSMA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Padam Giri",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Manahari Sharma",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Arjun Prasad Joshi",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sagar Bhusal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "PARSA",
+    "province": 2,
+    "hq": "BIRGANJ",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Pradipkumar Yadav",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ajay Chaurasia",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Anilkumar Rungata",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Hari Panta",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Rimakumari Yadav",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Manoj Chaudhari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ajay Chaudhari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sushil Patel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Rupesh Pandey",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Chhotelal Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Surendraprasad Chaudhari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ramakanta Chaurasiya",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Jalim Miyaa",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Jayaprakash Tharu",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramesh Rijal",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Tek Shakya",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "PYUTHAN",
+    "province": 5,
+    "hq": "PYUTHAN",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Suryabahadur Thapa Chhetri",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Krishnadhwoj Khadka",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Govindaprasad Pokhrel",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sushant Baidik",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "RAMECHHAP",
+    "province": 3,
+    "hq": "MANTHALI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Madhabprasad Dhungel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Shyamkumar Shrestha",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramchandra Khadka",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Krishnahari Budhathoki",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "RASUWA",
+    "province": 3,
+    "hq": "DHUNCHE",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Prembahadur Tamang",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Madhab Lamichhane",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Prakashsharan Mahat",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Basanta Bhatta",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "RAUTAHAT",
+    "province": 2,
+    "hq": "GAUR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Ajayakumar Gupta",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Madhavkumar Nepal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Anilkumar Jha",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rajesh Chaudhary",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Shailendra Sah",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Kiran Sah",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Firodas Alam",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Shekh Sagir",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Kundanprasad Kushawaha",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Punam Devi",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramkripal Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dhiraj Patel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Ramji Sah",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramkumar Bhattarai",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Devprasad Timalsina",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ganesh Poudel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "ROLPA",
+    "province": 5,
+    "hq": "LIWANG",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Gokulprasad Gharti Magar",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Barsaman Pun",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sudankumar Oli",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Balaram Thapa",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "RUPANDEHI",
+    "province": 5,
+    "hq": "SIDDHARTHANAGAR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Dadhiram Neupane",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ghanashyam Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Hirabahadur Khatri",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sunil Lamsal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Bishnuprasad Poudel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Subhas Pandey(Bishwodeep)",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Chunnaprasad Sharma",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sulav Kharel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Basudev Ghimire",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Faij Ahamad Khan",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sushil Gurung",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Lekhjung Thapa",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Sunita Thathere",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Babulal Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Aasutosh Mishra",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Kanhaiya Baniya",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 5,
+        "candidates": [
+          {
+            "name": "Khimlal Bhattarai",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Wokil Musalman",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bharatkumar Shah",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Tafik Ahamad Khan",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SALYAN",
+    "province": 6,
+    "hq": "SALYAN",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Gulabjung Shah",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rameshkumar Malla",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Keshbahadur Bista",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Lalitkumar Chand",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SANKHUWASABHA",
+    "province": 1,
+    "hq": "KHANDBARI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Arjun Karki",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sarita Khadka Thapa",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Dipen Shrestha",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Mingma Sherpa",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SAPTARI",
+    "province": 2,
+    "hq": "RAJBIRAJ",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Sumanraj Pyakurel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rabindra Chaudhari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramdev Sah",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Puspa Chaudhari",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Jiyaulahak Ansari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Suryanathprasad Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramkumar Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ramji Yadav",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Tarakanta Chaudhari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Arunkumar Sah",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Dineshkumar Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Umakanta Chaudhari",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Gangaprasad Chaudhari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Rubikumari Karna",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Tejlal Chaudhari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sitaram Sah",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SARLAHI",
+    "province": 2,
+    "hq": "MALANGWA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Manoj Devkota",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Pramod Sah",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sambhulal Shrestha",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Nitima Karki",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Nagendra Sah",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Mahindra Raya Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sarojkumar Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rabin Mahato",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Hariprasad Upreti",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Narayankaji Shrestha",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Binod Khanal",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Narendra Sah Kalwar",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Shiva Pujan",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ragnish Raya Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gagankumar Thapa",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Amresh Singh",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SINDHULI",
+    "province": 3,
+    "hq": "KAMALAMAI",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Pradipkumar Katwal Chhetri",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Dakendra Subedi",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ujjwol Baral",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dhanendra Karki",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Manojjung Thapa",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Lekhnath Dahal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sushila Thing",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Aashish Gajurel",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SINDHUPALCHOK",
+    "province": 3,
+    "hq": "CHAUTARA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Saresh Nepal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Madhav Sapkota",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Jangabahadur Lama",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bharatprasad Parajuli",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Sherbahadur Tamang",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Yubaraj Dulal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bansalal Tamang",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ajay Shrestha",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SIRAHA",
+    "province": 2,
+    "hq": "SIRAHA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Kedarnath Yadav",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramchandra Yadav",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramsundar Chaudhari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Bablu Gupta",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Nabinkumar Yadav",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Mukti Singh",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramchandra Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Shivashankar Yadav",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Lilanath Shrestha",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bishwonath Sah",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Subhaschandra Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Shambhu Yadav",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Dharmanathprasad Sah",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ajayshankar Nayak",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Chandrakalakumari Yadav",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Tapeshwor Yadav",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SOLUKHUMBU",
+    "province": 1,
+    "hq": "DUDHKUNDA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Kalpana Rai",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Asim Rai",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Prakashsingh Karki",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Rishidhan Rai",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SUNSARI",
+    "province": 1,
+    "hq": "INARUWA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Tikaram Limbu",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Suryabahadur Bhattarai",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Sujendra Tamang",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sarin Tamang(Goma)",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Rewatiraman Bhandari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ramkumari Chaudhari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Rajib Koirala",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Lalbikram",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 3,
+        "candidates": [
+          {
+            "name": "Bhagawati Chaudhari",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Durgesh Chaudhari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bijayakumar Gachhedaar",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ashok Chaudhari",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 4,
+        "candidates": [
+          {
+            "name": "Jagadishprasad Kusiyat",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Mahamad Mahafuj Ansari",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gyanendrabahadur Karki",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dipakkumar Shah",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SURKHET",
+    "province": 6,
+    "hq": "BIRENDRANAGAR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Dhurbakumar Shahi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Jitbahadur Rana",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bishnubahadur Khadka",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Tekbahadur Singh Thakuri",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Kulmani Devkota",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Jhakbahadur Malla",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Narayan Koirala",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Ramesh Sapkota",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "SYANGJA",
+    "province": 4,
+    "hq": "PUTALIBAZAR",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Minprasad Gurung",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sailendra Ghimire",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bharatraj Dhakal",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Dhananjaya Regmi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Khimbahadur Thapa",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Padam Bishwokarma",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bhagwatprakash Malla",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Jhavilal Dumre",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "TANAHU",
+    "province": 4,
+    "hq": "BYAS",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Bhagawati Neupane",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Bidhyanath Dhakal",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gobinda Bhattarai",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Swornim Wagle",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Kedar Sigdel",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sombahadur Thapa",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Shankar Bhandari",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Sriram Neupane",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "TAPLEJUNG",
+    "province": 1,
+    "hq": "TAPLEJUNG",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Kshitij Thebe",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Khelprasad Budhachhetri",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Gajendra Tumyahaang",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Birendra Shrethsa",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "TEHRATHUM",
+    "province": 1,
+    "hq": "MYANGLUNG",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Bhanubhakta Dhakal",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Ranadhwoj Kandangwa",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Santosh Subba",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Surendra Karki",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "UDAYAPUR",
+    "province": 1,
+    "hq": "TRIYUGA",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Durgakumar Thapa",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Baldev Chaudhary",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Bidur Basnet",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Paras Gelal",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      },
+      {
+        "zone": 2,
+        "candidates": [
+          {
+            "name": "Ambarbahadur Rayamajhi",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Sureshkumar Rai",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Ramkumar Rai",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Suryabahadur Tamang",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "district": "WESTERN RUKUM",
+    "province": 6,
+    "hq": "MUSIKOT",
+    "zones": [
+      {
+        "zone": 1,
+        "candidates": [
+          {
+            "name": "Nandaram Devkota",
+            "party": "CPN-UML",
+            "partyShort": "UML",
+            "color": "#2563eb"
+          },
+          {
+            "name": "Gopal Sharma",
+            "party": "Nepali Communist Party",
+            "partyShort": "NCP",
+            "color": "#991b1b"
+          },
+          {
+            "name": "Raju Kc",
+            "party": "Nepali Congress",
+            "partyShort": "NC",
+            "color": "#e11d48"
+          },
+          {
+            "name": "Manabahadur Shahi",
+            "party": "Rastriya Swotantra Party",
+            "partyShort": "RSP",
+            "color": "#f59e0b"
+          }
+        ]
+      }
+    ]
+  }
+]
