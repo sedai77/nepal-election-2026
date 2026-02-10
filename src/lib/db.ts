@@ -1,11 +1,12 @@
-import { createPool } from "@vercel/postgres";
+import { neon } from "@neondatabase/serverless";
 
-const pool = createPool({
-  connectionString: process.env.STORAGE_DATABASE_URL || process.env.STORAGE_URL || process.env.POSTGRES_URL,
-});
+const connectionString = process.env.STORAGE_DATABASE_URL || process.env.STORAGE_URL || process.env.POSTGRES_URL;
 
-export const sql = pool.sql;
-export { pool };
+if (!connectionString) {
+  console.warn("No database connection string found. Database features will not work.");
+}
+
+export const sql = neon(connectionString || "");
 
 /**
  * Initialize database tables. Call once after first deploy.
@@ -49,7 +50,7 @@ export async function initializeDatabase() {
     )
   `;
 
-  // Create indexes (IF NOT EXISTS is implicit with CREATE INDEX ... ON)
+  // Create indexes
   await sql`CREATE INDEX IF NOT EXISTS idx_likes_district ON likes(district)`;
   await sql`CREATE INDEX IF NOT EXISTS idx_likes_user ON likes(fb_user_id)`;
   await sql`CREATE INDEX IF NOT EXISTS idx_like_counts_district ON like_counts(district)`;

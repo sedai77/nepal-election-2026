@@ -24,7 +24,7 @@ export async function GET() {
 
     // Build sentiment map: for each district, pick party with most likes
     const districtPartyLikes: Record<string, { party: string; partyShort: string; totalLikes: number }[]> = {};
-    for (const row of sentimentRows.rows) {
+    for (const row of sentimentRows) {
       if (!districtPartyLikes[row.district]) districtPartyLikes[row.district] = [];
       districtPartyLikes[row.district].push({
         party: row.party,
@@ -47,11 +47,11 @@ export async function GET() {
 
     // Total likes across all
     const totalResult = await sql`SELECT COALESCE(SUM(count), 0) as total FROM like_counts WHERE count > 0`;
-    const totalLikes = Number(totalResult.rows[0]?.total || 0);
+    const totalLikes = Number(totalResult[0]?.total || 0);
 
     return NextResponse.json(
       {
-        topCandidates: topCandidates.rows,
+        topCandidates,
         sentiment,
         totalLikes,
       },

@@ -27,14 +27,14 @@ export async function GET(
         FROM likes
         WHERE fb_user_id = ${fbUserId} AND district = ${districtUpper}
       `;
-      for (const row of userLikeRows.rows) {
+      for (const row of userLikeRows) {
         userLikes[row.zone] = row.candidate_name;
       }
     }
 
     // Structure: { counts: { [zone]: { [candidateName]: { count, party, partyShort } } }, userLikes: { [zone]: candidateName } }
     const countsByZone: Record<number, Record<string, { count: number; party: string; partyShort: string }>> = {};
-    for (const row of counts.rows) {
+    for (const row of counts) {
       if (!countsByZone[row.zone]) countsByZone[row.zone] = {};
       countsByZone[row.zone][row.candidate_name] = {
         count: row.count,

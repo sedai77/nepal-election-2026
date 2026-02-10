@@ -62,8 +62,8 @@ export async function POST(request: NextRequest) {
       SELECT candidate_name, party, party_short FROM likes WHERE id = ${likeId}
     `;
 
-    if (existing.rows.length > 0) {
-      const oldCandidate = existing.rows[0].candidate_name;
+    if (existing.length > 0) {
+      const oldCandidate = existing[0].candidate_name;
       const oldCountId = countId(oldCandidate);
 
       if (oldCandidate === candidateName) {
