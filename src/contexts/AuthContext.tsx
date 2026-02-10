@@ -65,30 +65,26 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       FB.login(
-        async (response) => {
+        (response) => {
           if (response.status === "connected" && response.authResponse) {
-            try {
-              // Verify token server-side
-              const res = await fetch("/api/auth/facebook", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  accessToken: response.authResponse.accessToken,
-                }),
-              });
-
-              if (!res.ok) {
-                throw new Error("Server verification failed");
-              }
-
-              const userData: FacebookUser = await res.json();
-              setUser(userData);
-              // Cache access token for like API calls
-              localStorage.setItem("nepal-election-2026-fb-token", response.authResponse.accessToken);
-              resolve();
-            } catch (err) {
-              reject(err);
-            }
+            // Use .then()/.catch() instead of async callback (FB SDK rejects async functions)
+            fetch("/api/auth/facebook", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                accessToken: response.authResponse.accessToken,
+              }),
+            })
+              .then((res) => {
+                if (!res.ok) throw new Error("Server verification failed");
+                return res.json();
+              })
+              .then((userData: FacebookUser) => {
+                setUser(userData);
+                localStorage.setItem("nepal-election-2026-fb-token", response.authResponse!.accessToken);
+                resolve();
+              })
+              .catch((err) => reject(err));
           } else {
             reject(new Error("Facebook login cancelled"));
           }
