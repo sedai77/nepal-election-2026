@@ -107,7 +107,7 @@ export default function DistrictPanel({ district, onClose, isBookmarked, onToggl
   const partiesWon2022 = new Set(results2022.map((r) => r.party));
 
   return (
-    <div className="h-full flex flex-col bg-slate-900/95 backdrop-blur-sm">
+    <div className="md:h-full flex flex-col bg-slate-900/95 backdrop-blur-sm">
       {/* Header */}
       <div className="p-4 border-b border-slate-700/50">
         <div className="flex items-start justify-between">
@@ -193,7 +193,7 @@ export default function DistrictPanel({ district, onClose, isBookmarked, onToggl
       </div>
 
       {/* Tab Content */}
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="md:flex-1 md:overflow-y-auto p-4">
         {activeTab === "candidates" ? (
           <div className="space-y-4">
             {/* Disclaimer */}

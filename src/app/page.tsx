@@ -24,7 +24,7 @@ function titleCase(str: string): string {
 }
 
 export default function Home() {
-  const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
+  const [selectedDistrict, setSelectedDistrict] = useState<string | null>("JHAPA");
   const [selectedProvince, setSelectedProvince] = useState<number | null>(null);
   const [mapColorMode, setMapColorMode] = useState<MapColorMode>("province");
   const { bookmarks, toggle: toggleBookmark, isBookmarked } = useBookmarks();
@@ -254,7 +254,7 @@ export default function Home() {
 
         {/* Detail Panel — Desktop: side panel */}
         {districtData && (
-          <div className="panel-slide-in hidden md:block w-[420px] relative z-auto border-l border-slate-700/50">
+          <div className="panel-slide-in hidden md:block w-[420px] h-full relative z-auto border-l border-slate-700/50">
             <DistrictPanel
               district={districtData}
               onClose={() => setSelectedDistrict(null)}
@@ -273,12 +273,12 @@ export default function Home() {
               onClick={() => setSelectedDistrict(null)}
             />
             {/* Bottom sheet */}
-            <div className="mobile-sheet-up relative mt-auto max-h-[85vh] flex flex-col bg-slate-900 rounded-t-2xl border-t border-slate-700/50 shadow-2xl overflow-hidden">
+            <div className="mobile-sheet-up relative mt-auto h-[85vh] flex flex-col bg-slate-900 rounded-t-2xl border-t border-slate-700/50 shadow-2xl">
               {/* Drag handle */}
               <div className="flex justify-center py-2 shrink-0">
                 <div className="w-10 h-1 rounded-full bg-slate-600" />
               </div>
-              <div className="flex-1 overflow-hidden">
+              <div className="flex-1 min-h-0 overflow-y-auto">
                 <DistrictPanel
                   district={districtData}
                   onClose={() => setSelectedDistrict(null)}
