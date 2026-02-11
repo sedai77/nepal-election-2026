@@ -14,6 +14,7 @@ import BookmarkedDistricts from "@/components/BookmarkedDistricts";
 import ShareSiteButton from "@/components/ShareSiteButton";
 import FacebookLoginButton from "@/components/FacebookLoginButton";
 import TopCandidates from "@/components/TopCandidates";
+import PopularMatchups from "@/components/PopularMatchups";
 import { useBookmarks } from "@/hooks/useBookmarks";
 import { useSentiment } from "@/hooks/useSentiment";
 
@@ -106,11 +107,13 @@ export default function Home() {
         </header>
 
         {/* Province Filter + Map Mode */}
-        <div className="bg-slate-900/50 backdrop-blur-sm border-b border-slate-800/50 px-4 py-2.5 z-10">
+        <div className="bg-slate-900/50 backdrop-blur-sm border-b border-slate-800/50 px-4 py-2 z-10 space-y-1.5">
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <ProvinceFilter selectedProvince={selectedProvince} onSelect={setSelectedProvince} />
             <MapModeToggle mode={mapColorMode} onChange={setMapColorMode} />
           </div>
+          {/* Popular Matchups */}
+          <PopularMatchups onSelectDistrict={(d) => setSelectedDistrict(d)} />
         </div>
 
         {/* Main Content */}
@@ -307,16 +310,17 @@ export default function Home() {
       {/* Mobile: District detail bottom sheet */}
       {districtData && (
         <div className="md:hidden fixed inset-0 z-[9999] flex flex-col">
-          {/* Backdrop */}
+          {/* Backdrop — tap to close */}
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="flex-1 min-h-[15vh]"
             onClick={() => setSelectedDistrict(null)}
           />
-          {/* Bottom sheet */}
-          <div className="mobile-sheet-up relative mt-auto h-[85vh] flex flex-col bg-slate-900 rounded-t-2xl border-t border-slate-700/50 shadow-2xl">
-            {/* Drag handle */}
-            <div className="flex justify-center py-2 shrink-0">
+          {/* Bottom sheet — 70vh so map is visible behind */}
+          <div className="mobile-sheet-up relative h-[70vh] flex flex-col bg-slate-900 rounded-t-2xl border-t border-slate-700/50 shadow-2xl">
+            {/* Drag handle + close hint */}
+            <div className="flex flex-col items-center pt-2 pb-1 shrink-0">
               <div className="w-10 h-1 rounded-full bg-slate-600" />
+              <p className="text-[10px] text-slate-500 mt-1">Tap above to close</p>
             </div>
             <div className="flex-1 min-h-0 overflow-y-auto">
               <DistrictPanel

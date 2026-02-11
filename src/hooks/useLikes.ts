@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 
 interface LikeCountEntry {
@@ -31,32 +31,37 @@ export function useLikes(district: string | null): UseLikesReturn {
   const [likeCounts, setLikeCounts] = useState<Record<number, Record<string, LikeCountEntry>>>({});
   const [userLikes, setUserLikes] = useState<Record<number, string>>({});
   const [isLoading, setIsLoading] = useState(false);
+  const fetchRef = useRef(0);
+
+  // Fetch likes from server
+  const fetchLikes = useCallback(async () => {
+    if (!district) return;
+
+    const fetchId = ++fetchRef.current;
+    setIsLoading(true);
+    try {
+      const params = new URLSearchParams();
+      if (user?.fbId) params.set("userId", user.fbId);
+
+      const res = await fetch(`/api/likes/${encodeURIComponent(district)}?${params}`);
+      if (res.ok && fetchId === fetchRef.current) {
+        const data = await res.json();
+        setLikeCounts(data.counts || {});
+        setUserLikes(data.userLikes || {});
+      }
+    } catch {
+      // Silently fail — likes are non-critical
+    } finally {
+      if (fetchId === fetchRef.current) {
+        setIsLoading(false);
+      }
+    }
+  }, [district, user?.fbId]);
 
   // Fetch likes when district changes
   useEffect(() => {
-    if (!district) return;
-
-    const fetchLikes = async () => {
-      setIsLoading(true);
-      try {
-        const params = new URLSearchParams();
-        if (user?.fbId) params.set("userId", user.fbId);
-
-        const res = await fetch(`/api/likes/${encodeURIComponent(district)}?${params}`);
-        if (res.ok) {
-          const data = await res.json();
-          setLikeCounts(data.counts || {});
-          setUserLikes(data.userLikes || {});
-        }
-      } catch {
-        // Silently fail — likes are non-critical
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     fetchLikes();
-  }, [district, user?.fbId]);
+  }, [fetchLikes]);
 
   const toggleLike = useCallback(
     async (zone: number, candidateName: string, party: string, partyShort: string) => {
@@ -131,14 +136,19 @@ export function useLikes(district: string | null): UseLikesReturn {
           // Revert on error
           setUserLikes(previousUserLikes);
           setLikeCounts(previousCounts);
+          console.error("Like API error:", res.status, await res.text());
+        } else {
+          // Re-fetch from server to ensure consistency
+          setTimeout(() => fetchLikes(), 500);
         }
-      } catch {
+      } catch (err) {
         // Revert on error
         setUserLikes(previousUserLikes);
         setLikeCounts(previousCounts);
+        console.error("Like network error:", err);
       }
     },
-    [user, district, userLikes, likeCounts]
+    [user, district, userLikes, likeCounts, fetchLikes]
   );
 
   const getLikeCount = useCallback(
