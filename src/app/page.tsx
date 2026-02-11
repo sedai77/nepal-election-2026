@@ -25,17 +25,25 @@ function titleCase(str: string): string {
 }
 
 export default function Home() {
-  const [selectedDistrict, setSelectedDistrict] = useState<string | null>("JHAPA");
+  // Auto-select Jhapa on desktop only, not on mobile
+  const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
+  const [initialLoad, setInitialLoad] = useState(true);
   const [selectedProvince, setSelectedProvince] = useState<number | null>(null);
   const [mapColorMode, setMapColorMode] = useState<MapColorMode>("province");
   const { bookmarks, toggle: toggleBookmark, isBookmarked } = useBookmarks();
   const { sentiment, topCandidates, totalLikes } = useSentiment();
 
-  // Handle ?district= URL param on mount
+  // Handle ?district= URL param on mount + auto-select Jhapa on desktop
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const d = params.get("district");
-    if (d) setSelectedDistrict(d.toUpperCase());
+    if (d) {
+      setSelectedDistrict(d.toUpperCase());
+    } else if (window.innerWidth >= 768) {
+      // Desktop only — auto-select Jhapa so sidebar is visible
+      setSelectedDistrict("JHAPA");
+    }
+    setInitialLoad(false);
   }, []);
 
   const districtData = selectedDistrict ? getDistrictData(selectedDistrict) : null;
@@ -68,7 +76,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h1 className="text-sm md:text-lg font-bold text-white leading-tight">Nepal Election 2026</h1>
+                <h1 className="text-sm md:text-lg font-bold text-white leading-tight">Nepal Election 2026 Prediction</h1>
                 <p className="text-[10px] md:text-xs text-slate-400 hidden sm:block">Election Zone Tracker</p>
               </div>
             </div>
@@ -145,7 +153,7 @@ export default function Home() {
 
             {/* Legend - Province mode */}
             {!selectedDistrict && mapColorMode === "province" && (
-              <div className="absolute bottom-3 right-3 md:top-4 md:right-4 md:bottom-auto bg-slate-900/90 backdrop-blur-md rounded-xl p-2.5 md:p-3 border border-slate-700/50 z-10">
+              <div className="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md rounded-xl p-2.5 md:p-3 border border-slate-700/50 z-10">
                 <p className="text-[10px] md:text-xs font-semibold text-slate-300 mb-1.5 md:mb-2">Provinces</p>
                 <div className="grid grid-cols-2 md:grid-cols-1 gap-x-3 gap-y-1 md:space-y-1.5">
                   {Object.entries(PROVINCE_NAMES).map(([key, name]) => (
@@ -160,7 +168,7 @@ export default function Home() {
 
             {/* Legend - Party mode */}
             {!selectedDistrict && mapColorMode === "party" && (
-              <div className="absolute bottom-3 right-3 md:top-4 md:right-4 md:bottom-auto bg-slate-900/90 backdrop-blur-md rounded-xl p-2.5 md:p-3 border border-slate-700/50 z-10 max-w-[180px] md:max-w-[220px]">
+              <div className="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md rounded-xl p-2.5 md:p-3 border border-slate-700/50 z-10 max-w-[180px] md:max-w-[220px]">
                 <p className="text-[10px] md:text-xs font-semibold text-slate-300 mb-1.5 md:mb-2">2022 FPTP Winner</p>
                 <div className="space-y-1 md:space-y-1.5">
                   {partyDominance.slice(0, 6).map((p) => (
@@ -176,7 +184,7 @@ export default function Home() {
 
             {/* Legend - 2026 Election mode */}
             {!selectedDistrict && mapColorMode === "election2026" && (
-              <div className="absolute bottom-3 right-3 md:top-4 md:right-4 md:bottom-auto bg-slate-900/90 backdrop-blur-md rounded-xl p-2.5 md:p-3 border border-slate-700/50 z-10 max-w-[180px] md:max-w-[220px]">
+              <div className="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md rounded-xl p-2.5 md:p-3 border border-slate-700/50 z-10 max-w-[180px] md:max-w-[220px]">
                 <p className="text-[10px] md:text-xs font-semibold text-slate-300 mb-1.5 md:mb-2">2026 Sentiment Map</p>
                 {Object.keys(sentiment).length > 0 ? (
                   <div className="space-y-1.5">

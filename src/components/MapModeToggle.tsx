@@ -29,22 +29,6 @@ export default function MapModeToggle({ mode, onChange }: MapModeToggleProps) {
         </span>
       </button>
       <button
-        onClick={() => onChange("party")}
-        className={`px-2 sm:px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-          mode === "party"
-            ? "bg-amber-500/20 text-amber-400 ring-1 ring-amber-500/30"
-            : "text-slate-400 hover:text-slate-200 hover:bg-slate-700/50"
-        }`}
-      >
-        <span className="flex items-center gap-1 sm:gap-1.5">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="hidden sm:block">
-            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-            <line x1="4" y1="22" x2="4" y2="15" />
-          </svg>
-          2022
-        </span>
-      </button>
-      <button
         onClick={() => onChange("election2026")}
         className={`px-2 sm:px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
           mode === "election2026"
@@ -58,7 +42,24 @@ export default function MapModeToggle({ mode, onChange }: MapModeToggleProps) {
             <path d="M2 17l10 5 10-5" />
             <path d="M2 12l10 5 10-5" />
           </svg>
-          2026
+          <span className="hidden sm:inline">2026 Prediction</span>
+          <span className="sm:hidden">Prediction</span>
+        </span>
+      </button>
+      <button
+        onClick={() => onChange("party")}
+        className={`px-2 sm:px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+          mode === "party"
+            ? "bg-amber-500/20 text-amber-400 ring-1 ring-amber-500/30"
+            : "text-slate-400 hover:text-slate-200 hover:bg-slate-700/50"
+        }`}
+      >
+        <span className="flex items-center gap-1 sm:gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="hidden sm:block">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+            <line x1="4" y1="22" x2="4" y2="15" />
+          </svg>
+          2022
         </span>
       </button>
     </div>
