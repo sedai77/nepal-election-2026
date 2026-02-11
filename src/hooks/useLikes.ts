@@ -137,10 +137,9 @@ export function useLikes(district: string | null): UseLikesReturn {
           setUserLikes(previousUserLikes);
           setLikeCounts(previousCounts);
           console.error("Like API error:", res.status, await res.text());
-        } else {
-          // Re-fetch from server to ensure consistency
-          setTimeout(() => fetchLikes(), 500);
         }
+        // Don't re-fetch — optimistic update is already correct
+        // Re-fetching hits CDN cache which returns stale data
       } catch (err) {
         // Revert on error
         setUserLikes(previousUserLikes);
@@ -148,7 +147,7 @@ export function useLikes(district: string | null): UseLikesReturn {
         console.error("Like network error:", err);
       }
     },
-    [user, district, userLikes, likeCounts, fetchLikes]
+    [user, district, userLikes, likeCounts]
   );
 
   const getLikeCount = useCallback(
