@@ -480,7 +480,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
     }
 
     const now = Date.now();
-    const statusOrder: Record<string, number> = { DECLARED: 0, COUNTING: 1, PENDING: 2 };
+    const statusOrder: Record<string, number> = { COUNTING: 0, DECLARED: 1, PENDING: 2 };
     result = [...result].sort((a, b) => {
       // Recently updated cards float to top
       const aRecent = recentlyUpdated[a.constituency] && now - recentlyUpdated[a.constituency] < RECENT_WINDOW_MS;
@@ -536,7 +536,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
   }, [selectedProvince, provinceDistricts]);
 
   return (
-    <div className="h-full flex flex-col bg-slate-950">
+    <div className="h-full w-full flex flex-col bg-slate-950 overflow-hidden">
       {/* Featured Races */}
       <div className="shrink-0 border-b border-slate-800/50 px-3 md:px-4 py-3">
         <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-2">Key Races</p>
@@ -557,7 +557,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
         {/* Left: filters + cards */}
         <div className="flex-1 flex flex-col min-w-0">
           {/* Filters bar */}
-          <div className="shrink-0 px-3 md:px-4 py-3 border-b border-slate-800/50 space-y-2.5">
+          <div className="shrink-0 px-3 md:px-4 py-3 border-b border-slate-800/50 space-y-2.5 overflow-hidden">
             {/* Search + Clear */}
             <div className="flex gap-2">
               <div className="relative flex-1">
@@ -570,7 +570,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
                 </svg>
                 <input
                   type="text"
-                  placeholder="Search candidate, constituency, or district..."
+                  placeholder="Search candidate or constituency..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="w-full pl-9 pr-3 py-2 bg-slate-800/60 border border-slate-700/50 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500/50"
@@ -587,7 +587,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
             </div>
 
             {/* Status filters */}
-            <div className="flex gap-1.5 flex-wrap">
+            <div className="flex gap-1.5 overflow-x-auto scrollbar-hide">
               {([
                 { key: "all" as FilterStatus, label: `All (${constituencies.length})`, style: "blue" },
                 { key: "DECLARED" as FilterStatus, label: `Declared (${declared})`, style: "emerald" },
@@ -597,7 +597,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
                 <button
                   key={f.key}
                   onClick={() => setStatusFilter(f.key)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                  className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                     statusFilter === f.key
                       ? f.style === "blue" ? "bg-blue-500/20 text-blue-400 ring-1 ring-blue-500/30"
                       : f.style === "emerald" ? "bg-emerald-500/20 text-emerald-400 ring-1 ring-emerald-500/30"
@@ -613,7 +613,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
           </div>
 
           {/* Card grid */}
-          <div ref={gridScrollRef} className="flex-1 overflow-y-auto p-3 md:p-4">
+          <div ref={gridScrollRef} className="flex-1 overflow-y-auto overflow-x-hidden p-3 md:p-4">
             {filtered.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-48 gap-2">
                 <p className="text-slate-500 text-sm">No constituencies found</p>

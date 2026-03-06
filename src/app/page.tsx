@@ -353,13 +353,13 @@ export default function Home() {
           {isFetching && (
             <div className="absolute inset-0 fetch-sweep pointer-events-none" />
           )}
-          <div className="relative flex items-center justify-center gap-2 text-[10px] text-slate-500">
-            <span>Source: Election Commission Nepal</span>
-            <span className="text-slate-700">|</span>
+          <div className="relative flex items-center justify-center gap-1.5 md:gap-2 text-[9px] md:text-[10px] text-slate-500 flex-wrap">
+            <span className="hidden sm:inline">Source: Election Commission Nepal</span>
+            <span className="hidden sm:inline text-slate-700">|</span>
             {isFetching ? (
               <span className="text-blue-400 font-medium flex items-center gap-1">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                Fetching latest data...
+                Syncing...
               </span>
             ) : (
               <span className="tabular-nums">
@@ -374,8 +374,8 @@ export default function Home() {
             )}
             {fetchCount > 0 && (
               <>
-                <span className="text-slate-700">|</span>
-                <span className="text-slate-600">{fetchCount} updates</span>
+                <span className="text-slate-700 hidden sm:inline">|</span>
+                <span className="text-slate-600 hidden sm:inline">{fetchCount} updates</span>
               </>
             )}
           </div>
