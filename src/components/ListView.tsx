@@ -18,6 +18,8 @@ const RECENT_WINDOW_MS = 5 * 60 * 1000;
 
 function AnimatedNumber({ value, className }: { value: number; className?: string }) {
   const [display, setDisplay] = useState(value);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [delta, setDelta] = useState(0);
   const prevRef = useRef(value);
   const frameRef = useRef<number>(0);
 
@@ -27,20 +29,48 @@ function AnimatedNumber({ value, className }: { value: number; className?: strin
     prevRef.current = value;
     if (from === to) { setDisplay(to); return; }
 
-    const duration = 600;
+    const diff = to - from;
+    setDelta(diff);
+    setIsAnimating(true);
+
+    const duration = 1200;
     const start = performance.now();
     const animate = (now: number) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
+      // Smooth ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       setDisplay(Math.round(from + (to - from) * eased));
-      if (progress < 1) frameRef.current = requestAnimationFrame(animate);
+      if (progress < 1) {
+        frameRef.current = requestAnimationFrame(animate);
+      } else {
+        setIsAnimating(false);
+        setDelta(0);
+      }
     };
     frameRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameRef.current);
   }, [value]);
 
-  return <span className={className}>{display.toLocaleString()}</span>;
+  return (
+    <span className={`inline-flex items-center gap-1 ${className || ""}`}>
+      <span
+        className={`transition-all duration-300 ${
+          isAnimating
+            ? "text-emerald-400 scale-110 drop-shadow-[0_0_6px_rgba(52,211,153,0.5)]"
+            : ""
+        }`}
+        style={{ display: "inline-block", transformOrigin: "right center" }}
+      >
+        {display.toLocaleString()}
+      </span>
+      {isAnimating && delta !== 0 && (
+        <span className="text-[9px] font-bold text-emerald-400 animate-bounce-in whitespace-nowrap">
+          {delta > 0 ? `+${delta.toLocaleString()}` : delta.toLocaleString()}
+        </span>
+      )}
+    </span>
+  );
 }
 
 // ---- Helpers ----
@@ -99,21 +129,27 @@ function FeaturedRaceCard({
 }) {
   const candidates = data ? [...data.candidates].sort((a, b) => b.votes - a.votes).slice(0, 3) : [];
   const totalVotes = candidates.reduce((s, c) => s + c.votes, 0);
+  const hasWinner = candidates.some((c) => c.isWinner);
+  const isDeclared = data?.status === "DECLARED";
 
   return (
     <div className={`shrink-0 w-56 md:w-64 rounded-xl border overflow-hidden transition-all ${
-      isChanged ? "border-emerald-500/50 vote-flash" : "border-slate-700/50 hover:border-slate-600/50"
-    } bg-slate-900/80`}>
+      hasWinner || isDeclared
+        ? "border-amber-500/50 shadow-lg shadow-amber-500/10 ring-1 ring-amber-500/20 bg-slate-900/90"
+        : isChanged
+        ? "border-emerald-500/50 vote-flash card-shake bg-slate-900/80"
+        : "border-slate-700/50 hover:border-slate-600/50 bg-slate-900/80"
+    }`}>
       {/* Progress bar */}
       {totalVotes > 0 && (
-        <div className="h-1.5 flex overflow-hidden">
+        <div className={`h-1.5 flex overflow-hidden ${hasWinner ? "h-2" : ""}`}>
           {candidates.filter((c) => c.votes > 0).map((c, i) => (
             <div
               key={i}
               className="progress-segment"
               style={{
                 width: `${(c.votes / totalVotes) * 100}%`,
-                backgroundColor: c.color || "#6b7280",
+                backgroundColor: c.isWinner ? "#f59e0b" : c.color || "#6b7280",
               }}
             />
           ))}
@@ -123,10 +159,17 @@ function FeaturedRaceCard({
 
       <div className="px-3 py-2.5">
         <div className="flex items-center justify-between gap-1.5 mb-2">
-          <span className="text-[11px] font-bold text-white truncate">{race.label}</span>
+          <span className="text-[11px] font-bold text-white truncate">
+            {hasWinner && <span className="mr-1">🏆</span>}
+            {race.label}
+          </span>
           {data && (
-            <span className={`px-1.5 py-0.5 rounded-full text-[9px] font-semibold border ${statusColor(data.status)}`}>
-              {statusLabel(data.status)}
+            <span className={`px-1.5 py-0.5 rounded-full text-[9px] font-semibold border ${
+              hasWinner || isDeclared
+                ? "bg-amber-500/20 text-amber-400 border-amber-500/30"
+                : statusColor(data.status)
+            }`}>
+              {hasWinner ? "Winner" : statusLabel(data.status)}
             </span>
           )}
         </div>
@@ -139,13 +182,16 @@ function FeaturedRaceCard({
               >
                 {c.partyShort}
               </span>
-              <span className={`text-[11px] truncate flex-1 ${i === 0 && c.votes > 0 ? "text-white font-medium" : "text-slate-400"}`}>
+              <span className={`text-[11px] truncate flex-1 ${
+                c.isWinner ? "text-amber-200 font-semibold" : i === 0 && c.votes > 0 ? "text-white font-medium" : "text-slate-400"
+              }`}>
                 {c.name}
               </span>
+              {c.isWinner && <span className="text-[10px]">🏆</span>}
               <AnimatedNumber
                 value={c.votes}
                 className={`text-[11px] font-bold tabular-nums shrink-0 ${
-                  i === 0 && c.votes > 0 ? "text-emerald-400" : c.votes > 0 ? "text-slate-300" : "text-slate-600"
+                  c.isWinner ? "text-amber-400" : i === 0 && c.votes > 0 ? "text-emerald-400" : c.votes > 0 ? "text-slate-300" : "text-slate-600"
                 }`}
               />
             </div>
@@ -175,16 +221,20 @@ function ConstituencyCard({
   const sorted = [...constituency.candidates].sort((a, b) => b.votes - a.votes);
   const topCandidates = sorted.slice(0, 5);
   const remaining = sorted.length - 5;
+  const hasWinner = constituency.candidates.some((c) => c.isWinner);
+  const isDeclared = constituency.status === "DECLARED";
 
   return (
     <div
       className={`rounded-xl border overflow-hidden transition-all duration-300 ${
-        isChanged
-          ? "border-emerald-500/60 shadow-lg shadow-emerald-500/20 vote-flash ring-1 ring-emerald-500/30"
+        hasWinner || isDeclared
+          ? "border-amber-500/50 shadow-lg shadow-amber-500/10 ring-1 ring-amber-500/20 bg-slate-900/90"
+          : isChanged
+          ? "border-emerald-500/60 shadow-lg shadow-emerald-500/20 vote-flash ring-1 ring-emerald-500/30 card-shake"
           : isRecent
           ? "border-emerald-500/25 shadow-md shadow-emerald-500/5"
           : "border-slate-700/50 hover:border-slate-600/50"
-      } bg-slate-900/80`}
+      } ${!hasWinner && !isDeclared ? "bg-slate-900/80" : ""}`}
     >
       {/* Progress bar */}
       {totalVotes > 0 ? (
@@ -209,6 +259,7 @@ function ConstituencyCard({
       <div className="px-4 py-3">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 min-w-0">
+            {hasWinner && <span className="text-base shrink-0">🏆</span>}
             <h3 className="text-sm font-bold text-white truncate">{constituency.constituency}</h3>
             {isRecent && recentTime && (
               <span className="shrink-0 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 live-blink">
@@ -216,8 +267,12 @@ function ConstituencyCard({
               </span>
             )}
           </div>
-          <span className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-semibold border ${statusColor(constituency.status)}`}>
-            {statusLabel(constituency.status)}
+          <span className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-semibold border ${
+            hasWinner
+              ? "bg-amber-500/20 text-amber-400 border-amber-500/30"
+              : statusColor(constituency.status)
+          }`}>
+            {hasWinner ? "🏆 Declared" : statusLabel(constituency.status)}
           </span>
         </div>
         <div className="flex items-center gap-2 mt-1.5">
@@ -245,18 +300,23 @@ function ConstituencyCard({
         {topCandidates.map((candidate, idx) => {
           const isLeading = idx === 0 && candidate.votes > 0;
           const barWidth = maxVotes > 0 ? (candidate.votes / maxVotes) * 100 : 0;
+          const isWinner = candidate.isWinner;
 
           return (
             <div
               key={idx}
               className={`relative rounded-lg px-3 py-2 ${
-                isLeading ? "bg-emerald-500/8 border border-emerald-500/15" : "bg-slate-800/40"
+                isWinner
+                  ? "bg-amber-500/10 border border-amber-500/30 ring-1 ring-amber-400/20"
+                  : isLeading
+                  ? "bg-emerald-500/8 border border-emerald-500/15"
+                  : "bg-slate-800/40"
               }`}
             >
               {candidate.votes > 0 && (
                 <div
                   className="absolute inset-y-0 left-0 rounded-lg opacity-10 progress-segment"
-                  style={{ width: `${barWidth}%`, backgroundColor: candidate.color || "#6b7280" }}
+                  style={{ width: `${barWidth}%`, backgroundColor: isWinner ? "#f59e0b" : candidate.color || "#6b7280" }}
                 />
               )}
               <div className="relative flex items-center gap-2">
@@ -266,23 +326,26 @@ function ConstituencyCard({
                 >
                   {candidate.partyShort}
                 </span>
-                <span className={`text-xs truncate flex-1 ${isLeading ? "text-white font-medium" : "text-slate-300"}`}>
+                <span className={`text-xs truncate flex-1 ${
+                  isWinner ? "text-amber-200 font-semibold" : isLeading ? "text-white font-medium" : "text-slate-300"
+                }`}>
                   {candidate.name}
                 </span>
                 {candidate.votes > 0 ? (
                   <AnimatedNumber
                     value={candidate.votes}
                     className={`text-xs font-bold tabular-nums shrink-0 ${
-                      isLeading ? "text-emerald-400" : "text-slate-300"
+                      isWinner ? "text-amber-400" : isLeading ? "text-emerald-400" : "text-slate-300"
                     } ${isChanged ? "vote-count-update" : ""}`}
                   />
                 ) : (
                   <span className="text-xs text-slate-600 shrink-0">-</span>
                 )}
-                {candidate.isWinner && (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" className="shrink-0">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
+                {isWinner && (
+                  <span className="shrink-0 flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40">
+                    <span className="text-sm">🏆</span>
+                    <span className="text-[9px] font-bold text-amber-400 uppercase tracking-wide">Winner</span>
+                  </span>
                 )}
               </div>
             </div>
@@ -308,6 +371,14 @@ export default function ListView({ constituencies, changedConstituencies, recent
   const [selectedProvince, setSelectedProvince] = useState<number | null>(null);
   const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
   const [selectedParty, setSelectedParty] = useState<string | null>(null);
+  const gridScrollRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to top when constituencies get new data
+  useEffect(() => {
+    if (changedConstituencies.size > 0 && gridScrollRef.current) {
+      gridScrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [changedConstituencies]);
 
   // Build district→province lookup from electionData
   const districtProvinceMap = useMemo(() => {
@@ -539,7 +610,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
           </div>
 
           {/* Card grid */}
-          <div className="flex-1 overflow-y-auto p-3 md:p-4">
+          <div ref={gridScrollRef} className="flex-1 overflow-y-auto p-3 md:p-4">
             {filtered.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-48 gap-2">
                 <p className="text-slate-500 text-sm">No constituencies found</p>

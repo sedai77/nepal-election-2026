@@ -315,6 +315,17 @@ function transformData(
     // Sort candidates by votes (descending)
     candidates.sort((a, b) => b.votes - a.votes);
 
+    // ---- Hardcoded winners (remove when EC data catches up) ----
+    if (c.name === "Kathmandu-1") {
+      for (const cand of candidates) {
+        if (cand.name.toLowerCase().includes("ranju")) {
+          cand.isWinner = true;
+          status = "DECLARED";
+          break;
+        }
+      }
+    }
+
     constituencies.push({
       constituency: c.name,
       district,

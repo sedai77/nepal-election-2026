@@ -49,6 +49,12 @@ interface SentimentData {
   changedConstituencies: Set<string>;
   // Timestamps of when each constituency last received new votes
   recentlyUpdated: Record<string, number>;
+  // Whether a fetch is currently in progress
+  isFetching: boolean;
+  // Increments on every successful fetch (drives animations)
+  fetchCount: number;
+  // Seconds until next automatic refresh
+  secondsUntilRefresh: number;
 }
 
 export function useSentiment(): SentimentData {
@@ -60,10 +66,15 @@ export function useSentiment(): SentimentData {
   const [isLoading, setIsLoading] = useState(true);
   const [changedConstituencies, setChangedConstituencies] = useState<Set<string>>(new Set());
   const [recentlyUpdated, setRecentlyUpdated] = useState<Record<string, number>>({});
+  const [isFetching, setIsFetching] = useState(false);
+  const [fetchCount, setFetchCount] = useState(0);
+  const [secondsUntilRefresh, setSecondsUntilRefresh] = useState(60);
   const prevVotesRef = useRef<Record<string, number>>({});
+  const lastFetchTimeRef = useRef<number>(Date.now());
 
   useEffect(() => {
     const fetchElectionData = async () => {
+      setIsFetching(true);
       try {
         const res = await fetch("/api/election-results");
         if (res.ok) {
@@ -102,20 +113,34 @@ export function useSentiment(): SentimentData {
           setTotalLikes(data.totalVotes || 0);
           setConstituencies(newConstituencies);
           setLastUpdated(data.lastUpdated || 0);
+          setFetchCount((c) => c + 1);
+          lastFetchTimeRef.current = Date.now();
+          setSecondsUntilRefresh(15);
         }
       } catch {
         // Non-critical, silently fail
       } finally {
         setIsLoading(false);
+        setIsFetching(false);
       }
     };
 
     fetchElectionData();
 
-    // Poll every 60 seconds
-    const interval = setInterval(fetchElectionData, 60000);
-    return () => clearInterval(interval);
+    // Poll every 15 seconds
+    const interval = setInterval(fetchElectionData, 15000);
+
+    // Countdown timer — ticks every second
+    const countdown = setInterval(() => {
+      const elapsed = Math.floor((Date.now() - lastFetchTimeRef.current) / 1000);
+      setSecondsUntilRefresh(Math.max(0, 15 - elapsed));
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(countdown);
+    };
   }, []);
 
-  return { sentiment, topCandidates, totalLikes, constituencies, lastUpdated, isLoading, changedConstituencies, recentlyUpdated };
+  return { sentiment, topCandidates, totalLikes, constituencies, lastUpdated, isLoading, changedConstituencies, recentlyUpdated, isFetching, fetchCount, secondsUntilRefresh };
 }

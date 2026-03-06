@@ -27,7 +27,7 @@ export default function Home() {
   const [mapColorMode, setMapColorMode] = useState<MapColorMode>("election2026");
   const [viewMode, setViewMode] = useState<ViewMode>("list");
   const { bookmarks, toggle: toggleBookmark, isBookmarked } = useBookmarks();
-  const { sentiment, topCandidates, totalLikes, constituencies, lastUpdated, changedConstituencies, recentlyUpdated } = useSentiment();
+  const { sentiment, topCandidates, totalLikes, constituencies, lastUpdated, changedConstituencies, recentlyUpdated, isFetching, fetchCount, secondsUntilRefresh } = useSentiment();
 
   // Handle ?district= URL param on mount + auto-select Jhapa on desktop
   useEffect(() => {
@@ -81,13 +81,20 @@ export default function Home() {
 
             {/* Center: LIVE indicator */}
             <div className="flex-1 flex justify-center">
-              <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20">
+              <div className={`flex items-center gap-2 px-4 py-1.5 rounded-full border transition-all duration-500 ${
+                isFetching
+                  ? "bg-red-500/20 border-red-500/40 shadow-lg shadow-red-500/10 fetch-pulse"
+                  : "bg-red-500/10 border-red-500/20"
+              }`}>
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                  <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isFetching ? "bg-red-400" : "bg-red-500"}`}></span>
                 </span>
                 <span className="text-sm md:text-base font-black text-red-500 tracking-wider live-blink">
                   LIVE
+                </span>
+                <span className="text-[10px] md:text-xs text-red-400/50 font-mono tabular-nums hidden sm:inline">
+                  {isFetching ? "syncing..." : `${secondsUntilRefresh}s`}
                 </span>
                 {declaredCount > 0 && (
                   <span className="text-[10px] md:text-xs text-red-400/70 font-medium">
@@ -341,17 +348,43 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <footer className="shrink-0 bg-slate-900 border-t border-slate-800 px-4 py-1.5 z-20">
-          <div className="flex items-center justify-center gap-2 text-[10px] text-slate-500">
+        <footer className="shrink-0 bg-slate-900 border-t border-slate-800 px-4 py-1.5 z-20 relative overflow-hidden">
+          {/* Sweep animation on fetch */}
+          {isFetching && (
+            <div className="absolute inset-0 fetch-sweep pointer-events-none" />
+          )}
+          <div className="relative flex items-center justify-center gap-2 text-[10px] text-slate-500">
             <span>Source: Election Commission Nepal</span>
             <span className="text-slate-700">|</span>
-            <span>Updates every 60s</span>
+            {isFetching ? (
+              <span className="text-blue-400 font-medium flex items-center gap-1">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                Fetching latest data...
+              </span>
+            ) : (
+              <span className="tabular-nums">
+                Next update in <span className={`font-mono ${secondsUntilRefresh <= 5 ? "text-amber-400" : ""}`}>{secondsUntilRefresh}s</span>
+              </span>
+            )}
             {lastUpdated > 0 && (
               <>
                 <span className="text-slate-700">|</span>
                 <span>Last: {new Date(lastUpdated).toLocaleTimeString()}</span>
               </>
             )}
+            {fetchCount > 0 && (
+              <>
+                <span className="text-slate-700">|</span>
+                <span className="text-slate-600">{fetchCount} updates</span>
+              </>
+            )}
+          </div>
+          {/* Progress bar for countdown */}
+          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800">
+            <div
+              className="h-full bg-gradient-to-r from-blue-500/50 to-blue-400/30 transition-all duration-1000 ease-linear"
+              style={{ width: `${((15 - secondsUntilRefresh) / 15) * 100}%` }}
+            />
           </div>
         </footer>
       </div>
