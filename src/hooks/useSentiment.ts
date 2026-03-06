@@ -71,6 +71,10 @@ export function useSentiment(): SentimentData {
   const [secondsUntilRefresh, setSecondsUntilRefresh] = useState(60);
   const prevVotesRef = useRef<Record<string, number>>({});
   const lastFetchTimeRef = useRef<number>(Date.now());
+  const changedTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // How long to keep "recently updated" entries (5 minutes)
+  const RECENT_WINDOW_MS = 5 * 60 * 1000;
 
   useEffect(() => {
     const fetchElectionData = async () => {
@@ -95,17 +99,33 @@ export function useSentiment(): SentimentData {
           prevVotesRef.current = newVotes;
           setChangedConstituencies(changed);
 
-          // Record timestamps for recently changed constituencies
-          if (changed.size > 0) {
-            const now = Date.now();
-            setRecentlyUpdated((prev) => {
-              const next = { ...prev };
-              for (const key of changed) {
-                next[key] = now;
+          // Record timestamps for recently changed constituencies & prune stale entries
+          const now = Date.now();
+          setRecentlyUpdated((prev) => {
+            const next: Record<string, number> = {};
+            // Keep only entries within the recent window
+            for (const [key, ts] of Object.entries(prev)) {
+              if (now - ts < RECENT_WINDOW_MS) {
+                next[key] = ts;
               }
-              return next;
-            });
-            setTimeout(() => setChangedConstituencies(new Set()), 2000);
+            }
+            // Add newly changed entries
+            for (const key of changed) {
+              next[key] = now;
+            }
+            return next;
+          });
+
+          // Clear the changed set after animation completes
+          if (changed.size > 0) {
+            // Clear any pending timeout to avoid orphaned timers
+            if (changedTimeoutRef.current) {
+              clearTimeout(changedTimeoutRef.current);
+            }
+            changedTimeoutRef.current = setTimeout(() => {
+              setChangedConstituencies(new Set());
+              changedTimeoutRef.current = null;
+            }, 2000);
           }
 
           setSentiment(data.sentiment || {});
@@ -139,6 +159,9 @@ export function useSentiment(): SentimentData {
     return () => {
       clearInterval(interval);
       clearInterval(countdown);
+      if (changedTimeoutRef.current) {
+        clearTimeout(changedTimeoutRef.current);
+      }
     };
   }, []);
 
