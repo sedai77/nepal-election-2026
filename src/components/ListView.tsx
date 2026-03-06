@@ -472,7 +472,10 @@ export default function ListView({ constituencies, changedConstituencies, recent
     if (search.trim()) {
       const q = search.toLowerCase().trim();
       result = result.filter(
-        (c) => c.constituency.toLowerCase().includes(q) || c.district.toLowerCase().includes(q)
+        (c) =>
+          c.constituency.toLowerCase().includes(q) ||
+          c.district.toLowerCase().includes(q) ||
+          c.candidates.some((cand) => cand.name.toLowerCase().includes(q))
       );
     }
 
@@ -567,7 +570,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
                 </svg>
                 <input
                   type="text"
-                  placeholder="Search constituency or district..."
+                  placeholder="Search candidate, constituency, or district..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="w-full pl-9 pr-3 py-2 bg-slate-800/60 border border-slate-700/50 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500/50"
