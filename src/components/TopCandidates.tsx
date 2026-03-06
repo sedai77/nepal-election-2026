@@ -27,10 +27,10 @@ export default function TopCandidates({ candidates, totalLikes, onDistrictSelect
         className="w-full flex items-center justify-between px-3 py-2.5 hover:bg-slate-800/50 transition-colors"
       >
         <div className="flex items-center gap-2">
-          <span className="text-sm">🔥</span>
-          <span className="text-xs font-semibold text-white">Top Liked Candidates</span>
+          <span className="text-sm">🗳️</span>
+          <span className="text-xs font-semibold text-white">Top Voted Candidates</span>
           {totalLikes > 0 && (
-            <span className="text-xs text-slate-500">({totalLikes} votes)</span>
+            <span className="text-xs text-slate-500">({totalLikes.toLocaleString()} votes)</span>
           )}
         </div>
         <svg
@@ -72,8 +72,8 @@ export default function TopCandidates({ candidates, totalLikes, onDistrictSelect
                     {c.party_short} · {titleCase(c.district)} Zone {c.zone}
                   </p>
                 </div>
-                <span className="text-xs font-bold text-blue-400 tabular-nums shrink-0">
-                  {c.count}
+                <span className="text-xs font-bold text-emerald-400 tabular-nums shrink-0">
+                  {c.count.toLocaleString()}
                 </span>
               </button>
             );
@@ -81,11 +81,11 @@ export default function TopCandidates({ candidates, totalLikes, onDistrictSelect
         </div>
       )}
 
-      {/* Disclaimer */}
+      {/* Source attribution */}
       {!collapsed && (
-        <div className="border-t border-slate-700/50 px-3 py-2 bg-amber-500/5">
-          <p className="text-[10px] text-amber-400/70 leading-relaxed">
-            ⚠ Not actual results — reflects user sentiment only
+        <div className="border-t border-slate-700/50 px-3 py-2 bg-slate-800/30">
+          <p className="text-[10px] text-slate-500 leading-relaxed">
+            Source: ekantipur.com · Updates every 5 min
           </p>
         </div>
       )}

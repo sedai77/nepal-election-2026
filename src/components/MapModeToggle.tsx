@@ -42,8 +42,8 @@ export default function MapModeToggle({ mode, onChange }: MapModeToggleProps) {
             <path d="M2 17l10 5 10-5" />
             <path d="M2 12l10 5 10-5" />
           </svg>
-          <span className="hidden sm:inline">2026 Prediction</span>
-          <span className="sm:hidden">Prediction</span>
+          <span className="hidden sm:inline">2026 Live</span>
+          <span className="sm:hidden">Live</span>
         </span>
       </button>
       <button

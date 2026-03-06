@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { PARTY_COLORS } from "@/data/electionData";
+import type { ConstituencyVoteData } from "@/hooks/useSentiment";
 
 interface MatchupCandidate {
   name: string;
@@ -48,43 +48,26 @@ const POPULAR_MATCHUPS: Matchup[] = [
   },
 ];
 
-// Like counts keyed by "DISTRICT_ZONE_CANDIDATENAME"
-type LikeCounts = Record<string, number>;
-
 interface PopularMatchupsProps {
   onSelectDistrict: (district: string) => void;
+  voteData?: ConstituencyVoteData[];
 }
 
-export default function PopularMatchups({ onSelectDistrict }: PopularMatchupsProps) {
-  const [likeCounts, setLikeCounts] = useState<LikeCounts>({});
-
-  useEffect(() => {
-    // Fetch like counts for each matchup district
-    const districts = [...new Set(POPULAR_MATCHUPS.map((m) => m.district))];
-
-    districts.forEach(async (district) => {
-      try {
-        const res = await fetch(`/api/likes/${encodeURIComponent(district)}`);
-        if (res.ok) {
-          const data = await res.json();
-          const counts = data.counts || {};
-          // Flatten into our lookup map
-          const newCounts: LikeCounts = {};
-          for (const [zone, candidates] of Object.entries(counts)) {
-            for (const [name, info] of Object.entries(candidates as Record<string, { count: number }>)) {
-              newCounts[`${district}_${zone}_${name}`] = info.count;
-            }
-          }
-          setLikeCounts((prev) => ({ ...prev, ...newCounts }));
-        }
-      } catch {
-        // Non-critical
-      }
-    });
-  }, []);
-
-  const getCount = (district: string, zone: number, name: string) => {
-    return likeCounts[`${district}_${zone}_${name}`] || 0;
+export default function PopularMatchups({ onSelectDistrict, voteData }: PopularMatchupsProps) {
+  // Build vote lookup from live data
+  const getVoteCount = (district: string, zone: number, candidateName: string): number => {
+    if (!voteData) return 0;
+    const constituency = voteData.find(
+      (c) => c.district === district && c.zone === zone
+    );
+    if (!constituency) return 0;
+    // Match by last name (ekantipur may use slightly different name formatting)
+    const lastNameSearch = candidateName.split(" ").pop()?.toLowerCase() || "";
+    const candidate = constituency.candidates.find(
+      (c) => c.name.toLowerCase().includes(lastNameSearch) ||
+             lastNameSearch.includes(c.name.split(" ").pop()?.toLowerCase() || "")
+    );
+    return candidate?.votes || 0;
   };
 
   return (
@@ -96,8 +79,8 @@ export default function PopularMatchups({ onSelectDistrict }: PopularMatchupsPro
         🔥
       </span>
       {POPULAR_MATCHUPS.map((matchup) => {
-        const count1 = getCount(matchup.district, matchup.zone, matchup.candidates[0].name);
-        const count2 = getCount(matchup.district, matchup.zone, matchup.candidates[1].name);
+        const count1 = getVoteCount(matchup.district, matchup.zone, matchup.candidates[0].name);
+        const count2 = getVoteCount(matchup.district, matchup.zone, matchup.candidates[1].name);
 
         return (
           <button
@@ -118,8 +101,8 @@ export default function PopularMatchups({ onSelectDistrict }: PopularMatchupsPro
                 {matchup.candidates[0].name.split(" ").pop()}
               </span>
               {count1 > 0 && (
-                <span className="text-[9px] text-slate-500 tabular-nums">
-                  ({count1})
+                <span className="text-[9px] text-emerald-400 tabular-nums font-medium">
+                  ({count1.toLocaleString()})
                 </span>
               )}
             </div>
@@ -134,8 +117,8 @@ export default function PopularMatchups({ onSelectDistrict }: PopularMatchupsPro
                 {matchup.candidates[1].name.split(" ").pop()}
               </span>
               {count2 > 0 && (
-                <span className="text-[9px] text-slate-500 tabular-nums">
-                  ({count2})
+                <span className="text-[9px] text-emerald-400 tabular-nums font-medium">
+                  ({count2.toLocaleString()})
                 </span>
               )}
             </div>

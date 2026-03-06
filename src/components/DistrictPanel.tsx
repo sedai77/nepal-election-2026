@@ -3,36 +3,39 @@
 import { useState } from "react";
 import { DistrictData, PROVINCE_NAMES, PROVINCE_COLORS, PARTY_COLORS, Candidate } from "@/data/electionData";
 import { getDistrictResults, type ConstituencyResult } from "@/data/partyStrength";
-import { useLikes } from "@/hooks/useLikes";
-import { useAuth } from "@/contexts/AuthContext";
 import BookmarkButton from "./BookmarkButton";
 import ShareCard from "./ShareCard";
-import LikeButton from "./LikeButton";
+import type { ConstituencyVoteData } from "@/hooks/useSentiment";
 
 interface DistrictPanelProps {
   district: DistrictData;
   onClose: () => void;
   isBookmarked: boolean;
   onToggleBookmark: () => void;
+  voteData?: ConstituencyVoteData[];
 }
 
 function titleCase(str: string): string {
   return str.toLowerCase().split(" ").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 }
 
+function formatVotes(n: number): string {
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+  return n.toString();
+}
+
 interface CandidateCardProps {
   candidate: Candidate;
   rank: number;
-  district: string;
-  zone: number;
-  likeCount: number;
-  isLiked: boolean;
-  onLike: () => void;
+  voteCount: number;
+  isLeading: boolean;
 }
 
-function CandidateCard({ candidate, rank, district, zone, likeCount, isLiked, onLike }: CandidateCardProps) {
+function CandidateCard({ candidate, rank, voteCount, isLeading }: CandidateCardProps) {
   return (
-    <div className="flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors">
+    <div className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${
+      isLeading ? "bg-emerald-500/10 border border-emerald-500/20" : "bg-slate-800/50 hover:bg-slate-800"
+    }`}>
       <div
         className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
         style={{ backgroundColor: candidate.color }}
@@ -51,16 +54,22 @@ function CandidateCard({ candidate, rank, district, zone, likeCount, isLiked, on
           <span className="text-slate-400 text-xs truncate">{candidate.party}</span>
         </div>
       </div>
-      <LikeButton
-        district={district}
-        zone={zone}
-        candidateName={candidate.name}
-        party={candidate.party}
-        partyShort={candidate.partyShort}
-        likeCount={likeCount}
-        isLiked={isLiked}
-        onLike={onLike}
-      />
+      <div className="flex items-center gap-1.5 shrink-0">
+        {voteCount > 0 ? (
+          <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-700/50">
+            {isLeading && (
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            )}
+            <span className={`text-xs font-bold tabular-nums ${isLeading ? "text-emerald-400" : "text-slate-300"}`}>
+              {voteCount.toLocaleString()}
+            </span>
+          </div>
+        ) : (
+          <span className="text-xs text-slate-500 px-2.5 py-1.5">-</span>
+        )}
+      </div>
     </div>
   );
 }
@@ -94,17 +103,50 @@ function ResultCard({ result }: { result: ConstituencyResult }) {
 
 type TabId = "candidates" | "results2022" | "share";
 
-export default function DistrictPanel({ district, onClose, isBookmarked, onToggleBookmark }: DistrictPanelProps) {
+export default function DistrictPanel({ district, onClose, isBookmarked, onToggleBookmark, voteData }: DistrictPanelProps) {
   const [activeTab, setActiveTab] = useState<TabId>("candidates");
   const provinceName = PROVINCE_NAMES[district.province];
   const provinceColor = PROVINCE_COLORS[district.province];
   const totalCandidates = district.zones.reduce((a, z) => a + z.candidates.length, 0);
   const results2022 = getDistrictResults(district.district);
-  const { user } = useAuth();
-  const { getLikeCount, isLikedByUser, toggleLike } = useLikes(district.district);
+
+  // Build vote lookup from live data with fuzzy name matching
+  const zoneVoteData: Record<number, { name: string; votes: number }[]> = {};
+  if (voteData) {
+    for (const c of voteData) {
+      if (c.district === district.district) {
+        zoneVoteData[c.zone] = c.candidates;
+      }
+    }
+  }
+
+  const getVoteCount = (zone: number, name: string): number => {
+    const candidates = zoneVoteData[zone];
+    if (!candidates) return 0;
+    // Exact match first
+    const exact = candidates.find((c) => c.name === name);
+    if (exact) return exact.votes;
+    // Fuzzy: match by last name
+    const lastName = name.split(" ").pop()?.toLowerCase() || "";
+    const fuzzy = candidates.find((c) => {
+      const cLastName = c.name.split(" ").pop()?.toLowerCase() || "";
+      return cLastName === lastName;
+    });
+    if (fuzzy) return fuzzy.votes;
+    // Fuzzy: partial match
+    const partial = candidates.find((c) =>
+      c.name.toLowerCase().includes(lastName) || name.toLowerCase().includes(c.name.split(" ").pop()?.toLowerCase() || "___")
+    );
+    return partial?.votes || 0;
+  };
 
   // Count unique parties in 2022 results
   const partiesWon2022 = new Set(results2022.map((r) => r.party));
+
+  // Check if this district has any live vote data
+  const hasVoteData = Object.values(zoneVoteData).some((candidates) =>
+    candidates.some((c) => c.votes > 0)
+  );
 
   return (
     <div className="md:h-full flex flex-col bg-slate-900/95 backdrop-blur-sm">
@@ -196,12 +238,21 @@ export default function DistrictPanel({ district, onClose, isBookmarked, onToggl
       <div className="md:flex-1 md:overflow-y-auto p-4">
         {activeTab === "candidates" ? (
           <div className="space-y-4">
-            {/* Disclaimer */}
-            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl px-4 py-3">
-              <p className="text-xs text-amber-300/90 leading-relaxed">
-                <strong>Disclaimer:</strong> Likes reflect user sentiment only — not actual election results.
-                {!user && (
-                  <span className="text-amber-400/70"> Login with Facebook to vote for your favorite candidate.</span>
+            {/* Status banner */}
+            <div className={`rounded-xl px-4 py-3 ${
+              hasVoteData
+                ? "bg-emerald-500/10 border border-emerald-500/30"
+                : "bg-slate-800/60 border border-slate-700/50"
+            }`}>
+              <p className="text-xs leading-relaxed">
+                {hasVoteData ? (
+                  <span className="text-emerald-300/90">
+                    <strong>Live Results:</strong> Vote counts from early voting. Data updates every 5 minutes.
+                  </span>
+                ) : (
+                  <span className="text-slate-400">
+                    <strong>Awaiting Results:</strong> Vote counting data will appear here as results come in.
+                  </span>
                 )}
               </p>
             </div>
@@ -211,32 +262,37 @@ export default function DistrictPanel({ district, onClose, isBookmarked, onToggl
                 <p className="text-slate-400 text-sm">No candidate data available yet</p>
               </div>
             ) : (
-              district.zones.map((zone) => (
-                <div key={zone.zone} className="rounded-xl border border-slate-700/50 overflow-hidden">
-                  <div className="px-4 py-2.5 bg-slate-800/80 border-b border-slate-700/50">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-semibold text-white">Zone {zone.zone}</h3>
-                      <span className="text-xs text-slate-400">{zone.candidates.length} candidates</span>
+              district.zones.map((zone) => {
+                // Find the leading candidate in this zone
+                const zoneVotes = zone.candidates.map((c) => ({
+                  name: c.name,
+                  votes: getVoteCount(zone.zone, c.name),
+                }));
+                const maxVotes = Math.max(...zoneVotes.map((v) => v.votes), 0);
+                const leadingName = maxVotes > 0 ? zoneVotes.find((v) => v.votes === maxVotes)?.name : null;
+
+                return (
+                  <div key={zone.zone} className="rounded-xl border border-slate-700/50 overflow-hidden">
+                    <div className="px-4 py-2.5 bg-slate-800/80 border-b border-slate-700/50">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-sm font-semibold text-white">Zone {zone.zone}</h3>
+                        <span className="text-xs text-slate-400">{zone.candidates.length} candidates</span>
+                      </div>
+                    </div>
+                    <div className="p-2 space-y-1.5">
+                      {zone.candidates.map((candidate, idx) => (
+                        <CandidateCard
+                          key={idx}
+                          candidate={candidate}
+                          rank={idx + 1}
+                          voteCount={getVoteCount(zone.zone, candidate.name)}
+                          isLeading={candidate.name === leadingName}
+                        />
+                      ))}
                     </div>
                   </div>
-                  <div className="p-2 space-y-1.5">
-                    {zone.candidates.map((candidate, idx) => (
-                      <CandidateCard
-                        key={idx}
-                        candidate={candidate}
-                        rank={idx + 1}
-                        district={district.district}
-                        zone={zone.zone}
-                        likeCount={getLikeCount(zone.zone, candidate.name)}
-                        isLiked={isLikedByUser(zone.zone, candidate.name)}
-                        onLike={() =>
-                          toggleLike(zone.zone, candidate.name, candidate.party, candidate.partyShort)
-                        }
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
         ) : activeTab === "results2022" ? (

@@ -117,8 +117,8 @@ export default function NepalMap({ onDistrictSelect, selectedDistrict, colorMode
             ${colorMode === "election2026" ? (() => {
               const s = sentimentData?.[name.toUpperCase()];
               return s
-                ? `<div class="tooltip-detail" style="color:#e2e8f0;margin-top:2px">🔥 Top Sentiment: ${s.partyShort} (${s.totalLikes} likes)</div>`
-                : `<div class="tooltip-detail" style="color:#94a3b8;margin-top:2px">📊 No sentiment data yet</div>`;
+                ? `<div class="tooltip-detail" style="color:#e2e8f0;margin-top:2px">🗳️ Leading: ${s.partyShort} (${s.totalLikes.toLocaleString()} votes)</div>`
+                : `<div class="tooltip-detail" style="color:#94a3b8;margin-top:2px">📊 Awaiting vote data</div>`;
             })() : ""}
           </div>
         `;

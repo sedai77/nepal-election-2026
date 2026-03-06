@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
-import { AuthProvider } from "@/contexts/AuthContext";
-import FacebookSDK from "@/components/FacebookSDK";
 import "./globals.css";
 
 const SITE_URL = "https://nepalchunab.xyz";
@@ -245,8 +243,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
 
-        {/* Facebook Login SDK — loaded via client component for onLoad handler */}
-
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -258,10 +254,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
-        <FacebookSDK />
-        <AuthProvider>
           {children}
-        </AuthProvider>
         <Analytics />
       </body>
     </html>
