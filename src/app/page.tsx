@@ -102,11 +102,43 @@ export default function Home() {
     }
   }
 
+  // --- Sainte-Laguë PR seat allocation (Nepal's official method) ---
+  // Rule: Parties below 3% of total valid votes are EXCLUDED entirely.
+  // Their votes are discarded. Only qualifying parties' votes are used.
+  const PR_THRESHOLD = 0.03;
+  const qualifyingParties = Object.entries(votesByParty)
+    .filter(([, v]) => totalVotesCounted > 0 && v.votes / totalVotesCounted >= PR_THRESHOLD);
+
+  // Sainte-Laguë: divide each party's votes by 1, 3, 5, 7, ... and award
+  // seats to the highest quotients until all 110 seats are filled.
+  const prSeatsByParty: Record<string, number> = {};
+  if (qualifyingParties.length > 0) {
+    // Build all quotients
+    const quotients: { party: string; quotient: number }[] = [];
+    for (const [party, v] of qualifyingParties) {
+      prSeatsByParty[party] = 0;
+      for (let d = 1; d <= PR_SEATS * 2; d += 2) { // divisors: 1, 3, 5, 7...
+        quotients.push({ party, quotient: v.votes / d });
+      }
+    }
+    // Sort descending and pick top PR_SEATS
+    quotients.sort((a, b) => b.quotient - a.quotient);
+    for (let i = 0; i < PR_SEATS && i < quotients.length; i++) {
+      prSeatsByParty[quotients[i].party] = (prSeatsByParty[quotients[i].party] || 0) + 1;
+    }
+  }
+
+  // Qualifying vote total (only parties >= 3%)
+  const qualifyingVoteTotal = qualifyingParties.reduce((sum, [, v]) => sum + v.votes, 0);
+
   // Combined party standings for the seats table
   const allParties = new Set([...Object.keys(wonByParty), ...Object.keys(leadingByParty)]);
   const partyStandings = Array.from(allParties).map((p) => {
-    const voteShare = totalVotesCounted > 0 ? (votesByParty[p]?.votes || 0) / totalVotesCounted : 0;
-    const estPr = Math.round(voteShare * PR_SEATS);
+    const rawVoteShare = totalVotesCounted > 0 ? (votesByParty[p]?.votes || 0) / totalVotesCounted : 0;
+    const qualifies = rawVoteShare >= PR_THRESHOLD;
+    const qualifiedVoteShare = qualifies && qualifyingVoteTotal > 0
+      ? (votesByParty[p]?.votes || 0) / qualifyingVoteTotal : 0;
+    const estPr = prSeatsByParty[p] || 0;
     return {
       party: p,
       won: wonByParty[p]?.seats || 0,
@@ -114,7 +146,9 @@ export default function Home() {
       total: (wonByParty[p]?.seats || 0) + (leadingByParty[p]?.seats || 0),
       color: wonByParty[p]?.color || leadingByParty[p]?.color || votesByParty[p]?.color || "#6b7280",
       votes: votesByParty[p]?.votes || 0,
-      voteShare,
+      rawVoteShare,
+      qualifiedVoteShare,
+      qualifies,
       estPr,
     };
   }).sort((a, b) => b.total - a.total);
@@ -123,12 +157,12 @@ export default function Home() {
   const topParty = partyStandings[0];
   const topFptpTotal = topParty ? topParty.total : 0;
   const topFptpWon = topParty ? topParty.won : 0;
-  // Estimate PR seats based on actual vote share (real samanupatik calculation)
+  // PR seats from Sainte-Laguë allocation
   const estimatedPrSeats = topParty ? topParty.estPr : 0;
   const projectedTotal = topFptpTotal + estimatedPrSeats;
   const canReachTwoThirds = projectedTotal >= TWO_THIRDS;
   const seatsNeeded = Math.max(0, TWO_THIRDS - projectedTotal);
-  const topVotePercent = topParty ? topParty.voteShare : 0;
+  const topVotePercent = topParty ? topParty.qualifiedVoteShare : 0;
 
   return (
     <>
@@ -253,25 +287,40 @@ export default function Home() {
 
         {/* ===== 2/3 Majority Tracker + Party Seats ===== */}
         {partyStandings.length > 0 && (
-          <div className="bg-slate-900/60 border-b border-slate-800/50 px-3 md:px-4 py-2.5 z-10 overflow-x-auto">
-            <div className="flex flex-col lg:flex-row gap-3 lg:gap-6">
+          <div className="shrink-0 bg-slate-900/60 border-b border-slate-800/50 px-3 md:px-4 py-2 md:py-2.5 z-10">
+            <div className="flex flex-col lg:flex-row gap-2 md:gap-3 lg:gap-6">
 
               {/* 2/3 Majority Calculator */}
               <div className="shrink-0">
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">2/3 Majority Tracker</h3>
-                  <span className="text-[10px] text-slate-500">{TWO_THIRDS} seats needed of {TOTAL_SEATS}</span>
+                {/* Desktop: full layout */}
+                <div className="hidden md:block">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">2/3 Majority Tracker</h3>
+                    <span className="text-[10px] text-slate-500">{TWO_THIRDS} seats needed of {TOTAL_SEATS}</span>
+                  </div>
                 </div>
                 {topParty && (
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-sm shrink-0" style={{ backgroundColor: topParty.color }} />
-                      <span className="text-sm font-bold text-white">{topParty.party}</span>
+                  <div className="flex flex-col gap-1.5 md:gap-2">
+                    {/* Mobile: compact single-line header */}
+                    <div className="flex items-center gap-2 md:gap-2">
+                      <span className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-sm shrink-0" style={{ backgroundColor: topParty.color }} />
+                      <span className="text-xs md:text-sm font-bold text-white">{topParty.party}</span>
+                      {/* Mobile: inline badge */}
+                      <span className="md:hidden text-[10px] text-slate-500">{TWO_THIRDS}/{TOTAL_SEATS}</span>
+                      {canReachTwoThirds ? (
+                        <span className="md:hidden text-emerald-400 font-bold text-[10px] px-1.5 py-0.5 bg-emerald-500/10 rounded-full border border-emerald-500/20">
+                          ⅔ Possible
+                        </span>
+                      ) : (
+                        <span className="md:hidden text-amber-400 text-[10px] px-1.5 py-0.5 bg-amber-500/10 rounded-full border border-amber-500/20">
+                          Needs {seatsNeeded}
+                        </span>
+                      )}
                     </div>
 
                     {/* Progress bar */}
                     <div className="w-full lg:w-[320px]">
-                      <div className="relative h-6 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50">
+                      <div className="relative h-4 md:h-6 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50">
                         {/* Won portion */}
                         <div
                           className="absolute left-0 top-0 h-full transition-all duration-700"
@@ -306,7 +355,7 @@ export default function Home() {
                           style={{ left: `${(TWO_THIRDS / TOTAL_SEATS) * 100}%` }}
                         />
                         <div
-                          className="absolute top-0 text-[9px] font-bold text-yellow-400 z-10"
+                          className="absolute top-0 text-[8px] md:text-[9px] font-bold text-yellow-400 z-10"
                           style={{ left: `${(TWO_THIRDS / TOTAL_SEATS) * 100}%`, transform: "translateX(-50%)" }}
                         >
                           ⅔
@@ -314,8 +363,18 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Numbers */}
-                    <div className="flex items-center gap-3 text-xs flex-wrap">
+                    {/* Mobile: compact numbers row */}
+                    <div className="flex items-center gap-2 text-[10px] md:hidden flex-wrap">
+                      <span className="text-slate-300">Won: <span className="font-bold text-white">{topFptpWon}</span></span>
+                      <span className="text-slate-400">Lead: <span className="font-bold text-white">{topParty.leading}</span></span>
+                      <span className="text-slate-400">समानुपातिक: <span className="font-medium text-slate-300">~{estimatedPrSeats}</span></span>
+                      <span className="font-bold" style={{ color: canReachTwoThirds ? "#22c55e" : "#f59e0b" }}>
+                        {projectedTotal}/{TWO_THIRDS}
+                      </span>
+                    </div>
+
+                    {/* Desktop: full numbers */}
+                    <div className="hidden md:flex items-center gap-3 text-xs flex-wrap">
                       <span className="flex items-center gap-1">
                         <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: topParty.color }} />
                         <span className="text-slate-300">Won: <span className="font-bold text-white">{topFptpWon}</span></span>
@@ -346,12 +405,11 @@ export default function Home() {
                 )}
               </div>
 
-              {/* Divider */}
+              {/* Divider — desktop only */}
               <div className="hidden lg:block w-px bg-slate-700/50 self-stretch" />
-              <div className="lg:hidden h-px bg-slate-700/50" />
 
-              {/* Party Seats Won */}
-              <div className="flex-1 min-w-0">
+              {/* Party Seats Won — hidden on mobile */}
+              <div className="hidden md:block flex-1 min-w-0">
                 <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Seats by Party</h3>
                 <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                   {partyStandings.map((p) => (
@@ -365,7 +423,7 @@ export default function Home() {
                         )}
                       </div>
                       {/* Mini bar */}
-                      <div className="w-16 h-1.5 bg-slate-800 rounded-full overflow-hidden hidden sm:block">
+                      <div className="w-16 h-1.5 bg-slate-800 rounded-full overflow-hidden">
                         <div className="h-full rounded-full flex">
                           <div
                             className="h-full transition-all duration-500"
@@ -388,12 +446,24 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Mobile: compact party chips */}
+              <div className="md:hidden flex gap-2 overflow-x-auto scrollbar-hide">
+                {partyStandings.filter(p => p.total > 0).map((p) => (
+                  <span key={p.party} className="shrink-0 flex items-center gap-1 text-[10px] bg-slate-800/80 rounded-full px-2 py-0.5 border border-slate-700/50">
+                    <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: p.color }} />
+                    <span className="text-slate-300 font-medium">{p.party}</span>
+                    <span className="text-white font-bold">{p.won}</span>
+                    {p.leading > 0 && <span className="text-slate-500">+{p.leading}</span>}
+                  </span>
+                ))}
+              </div>
+
             </div>
           </div>
         )}
 
         {/* Main Content */}
-        <div className="flex-1 flex relative overflow-hidden">
+        <div className="flex-1 flex relative overflow-hidden min-h-0">
           {viewMode === "map" ? (
             <>
               {/* Map */}
