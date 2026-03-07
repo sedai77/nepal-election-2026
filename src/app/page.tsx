@@ -296,12 +296,9 @@ export default function Home() {
 
               {/* 2/3 Majority Calculator */}
               <div className="shrink-0">
-                {/* Desktop: full layout */}
-                <div className="hidden md:block">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">2/3 Majority Tracker</h3>
-                    <span className="text-[10px] text-slate-500">{TWO_THIRDS} seats needed of {TOTAL_SEATS}</span>
-                  </div>
+                <div className="flex items-center gap-2 mb-1 md:mb-2">
+                  <h3 className="text-[10px] md:text-xs font-bold text-slate-300 uppercase tracking-wider">2/3 Majority Tracker</h3>
+                  <span className="hidden md:inline text-[10px] text-slate-500">{TWO_THIRDS} seats needed of {TOTAL_SEATS}</span>
                 </div>
                 {topParty && (
                   <div className="flex flex-col gap-1.5 md:gap-2">
@@ -317,7 +314,7 @@ export default function Home() {
                         </span>
                       ) : (
                         <span className="md:hidden text-amber-400 text-[10px] px-1.5 py-0.5 bg-amber-500/10 rounded-full border border-amber-500/20">
-                          Needs {seatsNeeded}
+                          Needs {seatsNeeded} more
                         </span>
                       )}
                     </div>
