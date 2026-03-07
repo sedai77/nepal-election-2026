@@ -536,7 +536,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
   }, [selectedProvince, provinceDistricts]);
 
   return (
-    <div className="h-full w-full flex flex-col bg-slate-950 overflow-hidden">
+    <div className="md:h-full w-full flex flex-col bg-slate-950 md:overflow-hidden">
       {/* Featured Races */}
       <div className="shrink-0 border-b border-slate-800/50 px-3 md:px-4 py-3">
         <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-2">Key Races</p>
@@ -553,7 +553,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
       </div>
 
       {/* Main content: grid + sidebar */}
-      <div className="flex-1 flex min-h-0 overflow-hidden">
+      <div className="md:flex-1 flex md:min-h-0 md:overflow-hidden">
         {/* Left: filters + cards */}
         <div className="flex-1 flex flex-col min-w-0">
           {/* Filters bar */}
@@ -613,7 +613,7 @@ export default function ListView({ constituencies, changedConstituencies, recent
           </div>
 
           {/* Card grid */}
-          <div ref={gridScrollRef} className="flex-1 overflow-y-auto overflow-x-hidden p-3 md:p-4">
+          <div ref={gridScrollRef} className="md:flex-1 md:overflow-y-auto overflow-x-hidden p-3 md:p-4">
             {filtered.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-48 gap-2">
                 <p className="text-slate-500 text-sm">No constituencies found</p>
