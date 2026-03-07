@@ -307,7 +307,7 @@ export default function Home() {
                       </span>
                       <span className="flex items-center gap-1">
                         <span className="w-2 h-2 rounded-sm opacity-25" style={{ backgroundColor: topParty.color }} />
-                        <span className="text-slate-400">Est. PR: <span className="font-medium text-slate-300">~{estimatedPrSeats}</span></span>
+                        <span className="text-slate-400">समानुपातिक (Est.): <span className="font-medium text-slate-300">~{estimatedPrSeats}</span></span>
                       </span>
                       <span className="text-slate-500">|</span>
                       <span className="font-bold" style={{ color: canReachTwoThirds ? "#22c55e" : "#f59e0b" }}>
