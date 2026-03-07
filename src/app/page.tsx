@@ -61,6 +61,56 @@ export default function Home() {
   const declaredCount = constituencies.filter((c) => c.status === "DECLARED").length;
   const countingCount = constituencies.filter((c) => c.status === "COUNTING").length;
 
+  // ---- Party seat tallies (won + leading) ----
+  const TOTAL_SEATS = 275; // 165 FPTP + 110 PR
+  const FPTP_SEATS = 165;
+  const PR_SEATS = 110;
+  const TWO_THIRDS = 184; // ceil(275 * 2/3)
+
+  // Won seats: DECLARED constituencies where a candidate isWinner
+  const wonByParty: Record<string, { seats: number; color: string }> = {};
+  // Leading seats: COUNTING constituencies, top candidate
+  const leadingByParty: Record<string, { seats: number; color: string }> = {};
+
+  for (const c of constituencies) {
+    if (c.status === "DECLARED") {
+      const winner = c.candidates.find((cand) => cand.isWinner);
+      if (winner) {
+        if (!wonByParty[winner.partyShort]) wonByParty[winner.partyShort] = { seats: 0, color: winner.color };
+        wonByParty[winner.partyShort].seats++;
+      }
+    } else if (c.status === "COUNTING") {
+      const sorted = [...c.candidates].sort((a, b) => b.votes - a.votes);
+      if (sorted.length > 0 && sorted[0].votes > 0) {
+        const leader = sorted[0];
+        if (!leadingByParty[leader.partyShort]) leadingByParty[leader.partyShort] = { seats: 0, color: leader.color };
+        leadingByParty[leader.partyShort].seats++;
+      }
+    }
+  }
+
+  // Combined party standings for the seats table
+  const allParties = new Set([...Object.keys(wonByParty), ...Object.keys(leadingByParty)]);
+  const partyStandings = Array.from(allParties).map((p) => ({
+    party: p,
+    won: wonByParty[p]?.seats || 0,
+    leading: leadingByParty[p]?.seats || 0,
+    total: (wonByParty[p]?.seats || 0) + (leadingByParty[p]?.seats || 0),
+    color: wonByParty[p]?.color || leadingByParty[p]?.color || "#6b7280",
+  })).sort((a, b) => b.total - a.total);
+
+  // 2/3 majority calculation for top party
+  const topParty = partyStandings[0];
+  const topFptpTotal = topParty ? topParty.total : 0;
+  const topFptpWon = topParty ? topParty.won : 0;
+  // Estimate PR seats proportionally based on FPTP performance
+  const fptpDeclaredAndCounting = declaredCount + countingCount;
+  const topFptpPercent = fptpDeclaredAndCounting > 0 ? topFptpTotal / fptpDeclaredAndCounting : 0;
+  const estimatedPrSeats = Math.round(topFptpPercent * PR_SEATS);
+  const projectedTotal = topFptpTotal + estimatedPrSeats;
+  const canReachTwoThirds = projectedTotal >= TWO_THIRDS;
+  const seatsNeeded = Math.max(0, TWO_THIRDS - projectedTotal);
+
   return (
     <>
       <div className="h-screen flex flex-col overflow-hidden bg-slate-950">
@@ -181,6 +231,147 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        {/* ===== 2/3 Majority Tracker + Party Seats ===== */}
+        {partyStandings.length > 0 && (
+          <div className="bg-slate-900/60 border-b border-slate-800/50 px-3 md:px-4 py-2.5 z-10 overflow-x-auto">
+            <div className="flex flex-col lg:flex-row gap-3 lg:gap-6">
+
+              {/* 2/3 Majority Calculator */}
+              <div className="shrink-0">
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">2/3 Majority Tracker</h3>
+                  <span className="text-[10px] text-slate-500">{TWO_THIRDS} seats needed of {TOTAL_SEATS}</span>
+                </div>
+                {topParty && (
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="w-3 h-3 rounded-sm shrink-0" style={{ backgroundColor: topParty.color }} />
+                      <span className="text-sm font-bold text-white">{topParty.party}</span>
+                    </div>
+
+                    {/* Progress bar */}
+                    <div className="w-full lg:w-[320px]">
+                      <div className="relative h-6 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50">
+                        {/* Won portion */}
+                        <div
+                          className="absolute left-0 top-0 h-full transition-all duration-700"
+                          style={{
+                            width: `${(topFptpWon / TOTAL_SEATS) * 100}%`,
+                            backgroundColor: topParty.color,
+                          }}
+                        />
+                        {/* Leading portion (lighter) */}
+                        <div
+                          className="absolute top-0 h-full transition-all duration-700 opacity-50"
+                          style={{
+                            left: `${(topFptpWon / TOTAL_SEATS) * 100}%`,
+                            width: `${((topParty.leading) / TOTAL_SEATS) * 100}%`,
+                            backgroundColor: topParty.color,
+                          }}
+                        />
+                        {/* Estimated PR (even lighter) */}
+                        {estimatedPrSeats > 0 && (
+                          <div
+                            className="absolute top-0 h-full transition-all duration-700 opacity-25"
+                            style={{
+                              left: `${(topFptpTotal / TOTAL_SEATS) * 100}%`,
+                              width: `${(estimatedPrSeats / TOTAL_SEATS) * 100}%`,
+                              backgroundColor: topParty.color,
+                            }}
+                          />
+                        )}
+                        {/* 2/3 marker line */}
+                        <div
+                          className="absolute top-0 h-full w-[2px] bg-yellow-400 z-10"
+                          style={{ left: `${(TWO_THIRDS / TOTAL_SEATS) * 100}%` }}
+                        />
+                        <div
+                          className="absolute top-0 text-[9px] font-bold text-yellow-400 z-10"
+                          style={{ left: `${(TWO_THIRDS / TOTAL_SEATS) * 100}%`, transform: "translateX(-50%)" }}
+                        >
+                          ⅔
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Numbers */}
+                    <div className="flex items-center gap-3 text-xs flex-wrap">
+                      <span className="flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: topParty.color }} />
+                        <span className="text-slate-300">Won: <span className="font-bold text-white">{topFptpWon}</span></span>
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-sm opacity-50" style={{ backgroundColor: topParty.color }} />
+                        <span className="text-slate-300">Leading: <span className="font-bold text-white">{topParty.leading}</span></span>
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-sm opacity-25" style={{ backgroundColor: topParty.color }} />
+                        <span className="text-slate-400">Est. PR: <span className="font-medium text-slate-300">~{estimatedPrSeats}</span></span>
+                      </span>
+                      <span className="text-slate-500">|</span>
+                      <span className="font-bold" style={{ color: canReachTwoThirds ? "#22c55e" : "#f59e0b" }}>
+                        Projected: {projectedTotal}/{TWO_THIRDS}
+                      </span>
+                      {canReachTwoThirds ? (
+                        <span className="text-emerald-400 font-bold text-xs px-2 py-0.5 bg-emerald-500/10 rounded-full border border-emerald-500/20">
+                          2/3 Possible
+                        </span>
+                      ) : (
+                        <span className="text-amber-400 text-xs px-2 py-0.5 bg-amber-500/10 rounded-full border border-amber-500/20">
+                          Needs {seatsNeeded} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Divider */}
+              <div className="hidden lg:block w-px bg-slate-700/50 self-stretch" />
+              <div className="lg:hidden h-px bg-slate-700/50" />
+
+              {/* Party Seats Won */}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Seats by Party</h3>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+                  {partyStandings.map((p) => (
+                    <div key={p.party} className="flex items-center gap-2 min-w-[140px]">
+                      <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: p.color }} />
+                      <span className="text-xs text-slate-300 font-medium w-12 truncate">{p.party}</span>
+                      <div className="flex items-center gap-1">
+                        <span className="text-xs font-bold text-white tabular-nums">{p.won}</span>
+                        {p.leading > 0 && (
+                          <span className="text-[10px] text-slate-400 tabular-nums">+{p.leading}</span>
+                        )}
+                      </div>
+                      {/* Mini bar */}
+                      <div className="w-16 h-1.5 bg-slate-800 rounded-full overflow-hidden hidden sm:block">
+                        <div className="h-full rounded-full flex">
+                          <div
+                            className="h-full transition-all duration-500"
+                            style={{
+                              width: `${(p.won / FPTP_SEATS) * 100}%`,
+                              backgroundColor: p.color,
+                            }}
+                          />
+                          <div
+                            className="h-full transition-all duration-500 opacity-40"
+                            style={{
+                              width: `${(p.leading / FPTP_SEATS) * 100}%`,
+                              backgroundColor: p.color,
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        )}
 
         {/* Main Content */}
         <div className="flex-1 flex relative overflow-hidden">
