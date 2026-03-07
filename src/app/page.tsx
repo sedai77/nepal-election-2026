@@ -89,27 +89,46 @@ export default function Home() {
     }
   }
 
+  // Tally actual votes per party across all constituencies for PR estimation
+  const votesByParty: Record<string, { votes: number; color: string }> = {};
+  let totalVotesCounted = 0;
+  for (const c of constituencies) {
+    if (c.status === "DECLARED" || c.status === "COUNTING") {
+      for (const cand of c.candidates) {
+        totalVotesCounted += cand.votes;
+        if (!votesByParty[cand.partyShort]) votesByParty[cand.partyShort] = { votes: 0, color: cand.color };
+        votesByParty[cand.partyShort].votes += cand.votes;
+      }
+    }
+  }
+
   // Combined party standings for the seats table
   const allParties = new Set([...Object.keys(wonByParty), ...Object.keys(leadingByParty)]);
-  const partyStandings = Array.from(allParties).map((p) => ({
-    party: p,
-    won: wonByParty[p]?.seats || 0,
-    leading: leadingByParty[p]?.seats || 0,
-    total: (wonByParty[p]?.seats || 0) + (leadingByParty[p]?.seats || 0),
-    color: wonByParty[p]?.color || leadingByParty[p]?.color || "#6b7280",
-  })).sort((a, b) => b.total - a.total);
+  const partyStandings = Array.from(allParties).map((p) => {
+    const voteShare = totalVotesCounted > 0 ? (votesByParty[p]?.votes || 0) / totalVotesCounted : 0;
+    const estPr = Math.round(voteShare * PR_SEATS);
+    return {
+      party: p,
+      won: wonByParty[p]?.seats || 0,
+      leading: leadingByParty[p]?.seats || 0,
+      total: (wonByParty[p]?.seats || 0) + (leadingByParty[p]?.seats || 0),
+      color: wonByParty[p]?.color || leadingByParty[p]?.color || votesByParty[p]?.color || "#6b7280",
+      votes: votesByParty[p]?.votes || 0,
+      voteShare,
+      estPr,
+    };
+  }).sort((a, b) => b.total - a.total);
 
   // 2/3 majority calculation for top party
   const topParty = partyStandings[0];
   const topFptpTotal = topParty ? topParty.total : 0;
   const topFptpWon = topParty ? topParty.won : 0;
-  // Estimate PR seats proportionally based on FPTP performance
-  const fptpDeclaredAndCounting = declaredCount + countingCount;
-  const topFptpPercent = fptpDeclaredAndCounting > 0 ? topFptpTotal / fptpDeclaredAndCounting : 0;
-  const estimatedPrSeats = Math.round(topFptpPercent * PR_SEATS);
+  // Estimate PR seats based on actual vote share (real samanupatik calculation)
+  const estimatedPrSeats = topParty ? topParty.estPr : 0;
   const projectedTotal = topFptpTotal + estimatedPrSeats;
   const canReachTwoThirds = projectedTotal >= TWO_THIRDS;
   const seatsNeeded = Math.max(0, TWO_THIRDS - projectedTotal);
+  const topVotePercent = topParty ? topParty.voteShare : 0;
 
   return (
     <>
@@ -307,7 +326,7 @@ export default function Home() {
                       </span>
                       <span className="flex items-center gap-1">
                         <span className="w-2 h-2 rounded-sm opacity-25" style={{ backgroundColor: topParty.color }} />
-                        <span className="text-slate-400">समानुपातिक (Est.): <span className="font-medium text-slate-300">~{estimatedPrSeats}</span></span>
+                        <span className="text-slate-400">समानुपातिक ({(topVotePercent * 100).toFixed(1)}%): <span className="font-medium text-slate-300">~{estimatedPrSeats}</span></span>
                       </span>
                       <span className="text-slate-500">|</span>
                       <span className="font-bold" style={{ color: canReachTwoThirds ? "#22c55e" : "#f59e0b" }}>
